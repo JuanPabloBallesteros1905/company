@@ -11,30 +11,30 @@ export function MetricsSection() {
       title: "Joyeria italiana",
       description: "Joyeria italiana digitalizó su catalogo para asi lograr mas clientes a nivel nacional",
       image: "/portada_web.png",
-      link: "https://example.com/proyecto1",
+
     },
     {
       id: 2,
       title: "Esta pagina",
       description: "Desarrollamos nuestra web de una manera sencilla de comprender para nuestros clientes",
       image: "/portada_solu.png",
-      link: "https://example.com/proyecto2",
+
     }
     ,
-    
+
     {
       id: 3,
       title: "DashGestion",
       description: "Gestiona tus ventas e inventario en un solo lugar",
       image: "/portal_gestion.png",
-      link: "https://example.com/proyecto3",
+
     },
     {
       id: 4,
       title: "Fraktur",
       description: "Aplicacion movil que conecta médicos con pacientes de manera segura y eficiente",
       image: "/fraktur.png",
-      link: "https://example.com/proyecto3",
+
     },
 
 
@@ -90,14 +90,14 @@ export function MetricsSection() {
 interface cardProps {
   title: string;
   description: string;
-  link: string;
+
   image: string;
 }
 
 
 
 
-export function CourseCard({ title, description, link, image }: cardProps) {
+export function CourseCard({ title, description, image }: cardProps) {
   return (
     <article className="bg-white group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-200">
       <div className="relative w-full h-80 md:h-64 lg:h-44 overflow-hidden bg-gray-100">
@@ -128,11 +128,11 @@ export function CourseCard({ title, description, link, image }: cardProps) {
           {description}
         </p>
 
-        
+
       </div>
 
 
-      
+
     </article>
   );
 }
