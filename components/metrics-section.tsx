@@ -1,32 +1,49 @@
 import { CheckCircle, TrendingUp, Clock, Users } from "lucide-react"
 import Image from "next/image";
 
-const metrics = [
-  {
-    icon: CheckCircle,
-    value: "100+",
-    label: "Proyectos entregados",
-  },
-  {
-    icon: TrendingUp,
-    value: "30%",
-    label: "Incremento promedio en eficiencia",
-  },
-  {
-    icon: Clock,
-    value: "24/7",
-    label: "Soporte garantizado",
-  },
-  {
-    icon: Users,
-    value: "250+",
-    label: "Empresas confían en nosotros",
-  },
-]
 
 export function MetricsSection() {
+
+
+  const projets = [
+    {
+      id: 1,
+      title: "Joyeria italiana",
+      description: "Joyeria italiana digitalizó su catalogo para asi lograr mas clientes a nivel nacional",
+      image: "/portada_web.png",
+      link: "https://example.com/proyecto1",
+    },
+    {
+      id: 2,
+      title: "Esta pagina",
+      description: "Desarrollamos nuestra web de una manera sencilla de comprender para nuestros clientes",
+      image: "/portada_solu.png",
+      link: "https://example.com/proyecto2",
+    }
+    ,
+    
+    {
+      id: 3,
+      title: "DashGestion",
+      description: "Gestiona tus ventas e inventario en un solo lugar",
+      image: "/portal_gestion.png",
+      link: "https://example.com/proyecto3",
+    },
+    {
+      id: 4,
+      title: "Fraktur",
+      description: "Aplicacion movil que conecta médicos con pacientes de manera segura y eficiente",
+      image: "/fraktur.png",
+      link: "https://example.com/proyecto3",
+    },
+
+
+
+  ]
+
+
   return (
-    <section className="relative overflow-hidden  bg-white py-20">
+    <section id="proyectos" className="relative overflow-hidden  bg-white py-20">
       {/* Soft blue shapes in background */}
       <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-sky-400/8 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-blue-400/6 rounded-full blur-3xl" />
@@ -38,9 +55,7 @@ export function MetricsSection() {
             Resultados que respaldan
             <span className="block text-blue-600  mt-2">nuestra experiencia</span>
           </h2>
-          {/* <p className="text-lg text-slate-600">
-            Datos reales de proyectos exitosos con empresas líderes
-          </p> */}
+
         </div>
 
         {/* Projects cards */}
@@ -49,10 +64,15 @@ export function MetricsSection() {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9 px-6" >
 
-          <CourseCard />
-          <CourseCard />
-          <CourseCard />
- 
+
+          {
+            projets.map((item) => (
+              <CourseCard {...item} key={item.id} />
+            ))
+          }
+
+
+
 
 
         </div>
@@ -67,29 +87,52 @@ export function MetricsSection() {
 
 
 
-export function CourseCard() {
+interface cardProps {
+  title: string;
+  description: string;
+  link: string;
+  image: string;
+}
+
+
+
+
+export function CourseCard({ title, description, link, image }: cardProps) {
   return (
     <article className="bg-white group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-200">
-      <div className="relative w-full h-80 md:h-64 lg:h-44">
+      <div className="relative w-full h-80 md:h-64 lg:h-44 overflow-hidden bg-gray-100">
+        {/* Imagen de fondo borrosa para llenar huecos */}
         <Image
-          src={'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'}
-          alt={'Course Image'}
+          src={image}
+          alt=""
           fill
-          className="object-cover object-center"
+          className="object-cover blur-xl opacity-50"
+        />
+        {/* Imagen principal */}
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-contain relative z-10" // 'contain' muestra la imagen completa
         />
       </div>
 
       <div className="px-3 h-60 py-4">
         <h3 className="text-sm text-gray-500 pb-2">
-          <span className="bg-indigo-600 py-1 px-2 text-white rounded-lg">
-            'Course'
+          <span className="bg-blue-600 py-1 px-2 text-white rounded-lg">
+            {title}
           </span>
         </h3>
 
-        <p className="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
-          'Course Name'
+        <p className="pt-2 text-base font-semibold text-gray-500 group-hover:text-gray-900">
+          {description}
         </p>
+
+        
       </div>
+
+
+      
     </article>
   );
 }

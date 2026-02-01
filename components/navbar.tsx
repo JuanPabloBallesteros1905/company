@@ -7,6 +7,8 @@ import { Menu, X } from "lucide-react"
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
+
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -21,7 +23,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           
-          <span className="text-lg font-semibold text-foreground">SolutiaCorp Solutions</span>
+          <span className="text-xl font-semibold text-foreground">Innova Solutions</span>
         </Link>
 
         {/* Desktop Navigation */}

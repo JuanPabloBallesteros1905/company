@@ -10,11 +10,14 @@ import {
   Github,
   ArrowUp,
 } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
+
+  
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -28,9 +31,15 @@ export function Footer() {
           {/* Logo & Company Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex items-center space-x-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-900">
-                <span className="text-base font-semibold text-white">N</span>
-              </div>
+              
+                <Image
+                  src="/innova_logo.png"
+                  alt="Logo"
+                  width={102}
+                  height={102}
+                  className=""
+                />
+              
               <span className="text-base font-semibold text-slate-900">
                 Nexus Digital
               </span>
@@ -155,35 +164,16 @@ export function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-10 flex flex-col gap-4 border-t border-slate-200 pt-6 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm text-slate-500">
-            © {new Date().getFullYear()} Nexus Digital Solutions. Todos los
-            derechos reservados.
-          </p>
-
-          <div className="flex flex-wrap gap-4 text-sm text-slate-500">
-            <a href="#" className="transition-colors hover:text-slate-900">
-              Política de Privacidad
-            </a>
-            <a href="#" className="transition-colors hover:text-slate-900">
-              Términos de Uso
-            </a>
-            <a href="#" className="transition-colors hover:text-slate-900">
-              Legal
-            </a>
-          </div>
-
-          <button
-            onClick={scrollToTop}
-            className="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 text-slate-500 transition-colors hover:border-slate-400 hover:text-slate-900"
-            aria-label="Volver arriba"
-          >
-            <ArrowUp className="h-4 w-4" />
-          </button>
-        </div>
+ 
       </div>
     </footer>
   )
 }
+
+
+
+
+
+
+
+

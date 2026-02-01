@@ -114,16 +114,16 @@ export function ServicesSection() {
                       </span>
                     </div>
                     <div className="h-3 w-px bg-slate-200" />
-                    <div className="flex items-center gap-2">
+                    {/* <div className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-green-600" />
                       <span className="text-xs text-slate-600">
                         <span className="font-semibold text-slate-900">{service.stats.success}</span> éxito
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                   
                   {/* Feature tags */}
-                  <div className="flex flex-wrap gap-2">
+                  {/* <div className="flex flex-wrap gap-2">
                     {service.features.map((feature, idx) => (
                       <span
                         key={idx}
@@ -133,7 +133,7 @@ export function ServicesSection() {
                         {feature}
                       </span>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Bottom accent line */}
@@ -143,41 +143,13 @@ export function ServicesSection() {
           })}
         </div>
 
-        {/* Process overview */}
-        <div className="mt-20 rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-8 md:p-12">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-slate-900 mb-2">Nuestro proceso</h3>
-            <p className="text-slate-600">Metodología ágil orientada a resultados</p>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { step: "01", title: "Análisis", desc: "Evaluación de necesidades" },
-              { step: "02", title: "Diseño", desc: "Arquitectura de solución" },
-              { step: "03", title: "Desarrollo", desc: "Implementación iterativa" },
-              { step: "04", title: "Soporte", desc: "Mantenimiento continuo" }
-            ].map((phase, i) => (
-              <div key={i} className="relative">
-                <div className="text-center space-y-2">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white font-bold text-sm mb-2 shadow-lg shadow-blue-600/20">
-                    {phase.step}
-                  </div>
-                  <h4 className="font-semibold text-slate-900">{phase.title}</h4>
-                  <p className="text-sm text-slate-600">{phase.desc}</p>
-                </div>
-                {/* Connector line */}
-                {i < 3 && (
-                  <div className="hidden md:block absolute top-6 left-[calc(50%+24px)] w-[calc(100%-48px)] h-0.5 bg-slate-200" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
+        
+   
 
         {/* CTA */}
         <div className="mt-16 text-center">
           <p className="text-slate-600">
-            ¿Necesita una solución personalizada?{" "}
+            ¿No encuentras lo que necesitas?{" "}
             <a href="#contacto" className="font-semibold text-blue-600 hover:text-blue-700 transition-colors underline decoration-blue-200 underline-offset-4">
               Hablemos de su proyecto
             </a>

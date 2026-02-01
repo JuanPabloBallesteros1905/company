@@ -29,7 +29,7 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
 
-  const form = useForm<FormData>({
+  const formMethods = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullName: "",
@@ -51,28 +51,28 @@ export function ContactForm() {
 
     setIsSubmitting(false)
     setSubmitSuccess(true)
-    form.reset()
+    formMethods.reset()
 
     // Reset success message after 5 seconds
     setTimeout(() => setSubmitSuccess(false), 5000)
   }
 
   return (
-    <div className="rounded-lg border border-slate-800 bg-slate-800/50 p-6 lg:p-8">
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+    <div className="rounded-xl border border-slate-200 bg-white p-6 lg:p-8 shadow-sm">
+      <Form {...formMethods}>
+        <div className="space-y-5">
           <FormField
-            control={form.control}
+            control={formMethods.control}
             name="fullName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">
-                  Nombre Completo <span className="text-red-500">*</span>
+                <FormLabel className="text-slate-900 font-semibold">
+                  Nombre completo <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Juan Pérez"
-                    className="border-slate-700 bg-slate-900/50 text-white placeholder:text-slate-500"
+                    className="border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-sky-500 focus:ring-sky-500/20"
                     {...field}
                   />
                 </FormControl>
@@ -82,15 +82,15 @@ export function ContactForm() {
           />
 
           <FormField
-            control={form.control}
+            control={formMethods.control}
             name="company"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">Empresa</FormLabel>
+                <FormLabel className="text-slate-900 font-semibold">Empresa</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Mi Empresa S.A."
-                    className="border-slate-700 bg-slate-900/50 text-white placeholder:text-slate-500"
+                    className="border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-sky-500 focus:ring-sky-500/20"
                     {...field}
                   />
                 </FormControl>
@@ -100,18 +100,18 @@ export function ContactForm() {
           />
 
           <FormField
-            control={form.control}
+            control={formMethods.control}
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">
+                <FormLabel className="text-slate-900 font-semibold">
                   Email <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input
                     type="email"
                     placeholder="juan@empresa.com"
-                    className="border-slate-700 bg-slate-900/50 text-white placeholder:text-slate-500"
+                    className="border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-sky-500 focus:ring-sky-500/20"
                     {...field}
                   />
                 </FormControl>
@@ -121,23 +121,23 @@ export function ContactForm() {
           />
 
           <FormField
-            control={form.control}
+            control={formMethods.control}
             name="service"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">
-                  Servicio de Interés <span className="text-red-500">*</span>
+                <FormLabel className="text-slate-900 font-semibold">
+                  Servicio de interés <span className="text-red-500">*</span>
                 </FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
-                    <SelectTrigger className="border-slate-700 bg-slate-900/50 text-white">
+                    <SelectTrigger className="border-slate-300 bg-white text-slate-900 focus:border-sky-500 focus:ring-sky-500/20">
                       <SelectValue placeholder="Seleccione un servicio" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     <SelectItem value="mobile">Desarrollo de Aplicaciones Móviles</SelectItem>
                     <SelectItem value="custom">Soluciones Digitales a Medida</SelectItem>
-                    <SelectItem value="automation">Automatización de Procesos (IT)</SelectItem>
+                    <SelectItem value="automation">Automatización de Procesos (RPA)</SelectItem>
                     <SelectItem value="consulting">Consultoría & Estrategia Tech</SelectItem>
                   </SelectContent>
                 </Select>
@@ -147,17 +147,17 @@ export function ContactForm() {
           />
 
           <FormField
-            control={form.control}
+            control={formMethods.control}
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-white">
+                <FormLabel className="text-slate-900 font-semibold">
                   Mensaje <span className="text-red-500">*</span>
                 </FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Cuéntenos sobre su proyecto..."
-                    className="min-h-[120px] border-slate-700 bg-slate-900/50 text-white placeholder:text-slate-500"
+                    className="min-h-[120px] border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:border-sky-500 focus:ring-sky-500/20"
                     {...field}
                   />
                 </FormControl>
@@ -166,37 +166,19 @@ export function ContactForm() {
             )}
           />
 
-          <FormField
-            control={form.control}
-            name="privacy"
-            render={({ field }) => (
-              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                </FormControl>
-                <div className="space-y-1 leading-none">
-                  <FormLabel className="text-sm text-slate-300">
-                    Acepto la{" "}
-                    <a href="#" className="text-emerald-400 hover:underline">
-                      política de privacidad
-                    </a>{" "}
-                    <span className="text-red-500">*</span>
-                  </FormLabel>
-                  <FormMessage />
-                </div>
-              </FormItem>
-            )}
-          />
+          
 
           {submitSuccess && (
-            <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/10 p-4 text-center text-sm text-emerald-400">
+            <div className="rounded-lg border border-green-200 bg-green-50 p-4 text-center text-sm text-green-700 font-medium">
               ✓ ¡Gracias! Su solicitud ha sido enviada exitosamente.
             </div>
           )}
 
           <Button
-            type="submit"
-            className="w-full bg-emerald-500 text-white hover:bg-emerald-600"
+            type="button"
+            onClick={formMethods.handleSubmit(onSubmit)}
+            className="w-full bg-blue-600 text-white hover:bg-blue-600 shadow-lg hover:shadow-xl transition-all font-semibold"
+            size="lg"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
@@ -205,10 +187,10 @@ export function ContactForm() {
                 Enviando...
               </>
             ) : (
-              "Enviar Solicitud"
+              "Enviar solicitud"
             )}
           </Button>
-        </form>
+        </div>
       </Form>
     </div>
   )
