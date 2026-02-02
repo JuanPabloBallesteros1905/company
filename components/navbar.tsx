@@ -22,8 +22,8 @@ export function Navbar() {
       <nav className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          
-          <span className="text-xl font-semibold text-foreground">Innova Solutions</span>
+
+          <span className="text-xl font-semibold text-foreground">Solutia</span>
         </Link>
 
         {/* Desktop Navigation */}

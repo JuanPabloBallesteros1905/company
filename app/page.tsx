@@ -15,7 +15,7 @@ export default function HomePage() {
       <MetricsSection />
       {/* <ProjectsSection /> */}
       <ContactSection />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }
