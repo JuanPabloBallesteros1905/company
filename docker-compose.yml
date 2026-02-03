@@ -1,13 +1,11 @@
-version: '3.8'
+version: "3.9"
 
 services:
-  nextjs-app:
+  front:
+    container_name: solutia-front
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: nextjs-frontend
     ports:
       - "4000:4000"
-    environment:
-      - NODE_ENV=production
-    restart: unless-stopped
+    restart: always
