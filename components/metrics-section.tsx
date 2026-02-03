@@ -29,13 +29,25 @@ export function MetricsSection() {
       image: "/portal_gestion.png",
 
     },
+
+
     {
       id: 4,
+      title: "FerreMag",
+      description: "Tienda de ferreteria digitalizada, con una interfaz intuitiva y un diseño moderno",
+      image: "/ferre_mag.png",
+
+    },
+
+    {
+      id: 5,
       title: "Fraktur",
       description: "Aplicacion movil que conecta médicos con pacientes de manera segura y eficiente",
       image: "/fraktur.png",
 
     },
+
+
 
 
 

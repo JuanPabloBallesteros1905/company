@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,12 +19,24 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/20">
-      <nav className="container mx-auto flex h-16 items-center justify-between px-4">
+    <header className="sticky  top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/20">
+      <nav className="container mx-auto flex h-26 items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center mt-10 space-x-9">
 
-          <span className="text-xl font-semibold text-foreground">Solutia</span>
+          {/* <span className="text-3xl font-semibold text-foreground">Solutia</span>
+
+
+           */}
+
+
+           <Image
+            src="/solu_logo.png"
+            alt="Logo"
+            width={702}
+            height={702}
+            className="h-60 w-90"
+          />
         </Link>
 
         {/* Desktop Navigation */}
