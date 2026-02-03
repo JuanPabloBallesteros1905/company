@@ -36,10 +36,7 @@ COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
 # Copiar public solo si existe en builder
-RUN if [ -d "/app/public" ]; then \
-        cp -r /app/public ./public && \
-        chown -R nextjs:nodejs ./public; \
-    fi
+COPY --from=builder /app/public ./public
 
 # Cambiar propietario de los archivos
 RUN chown -R nextjs:nodejs /app
