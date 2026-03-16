@@ -1,70 +1,91 @@
 'use client'
+import { Item } from "@radix-ui/react-select";
+import { be } from "date-fns/locale";
 import Image from "next/image";
 import { useState } from "react";
 
 
 export function MetricsSection() {
+const projets = [
+  {
+    id: 1,
+    title: "Joyeria italiana",
+    description:
+      "Joyeria italiana digitalizó su catalogo para asi lograr mas clientes a nivel nacional",
+    image: "/portada_web.png",
+    privado: false,
+    url: "https://joyeriaitaliana.com/",
+    beneficios: [
+      "Mayor visibilidad en internet",
+      "Incremento de clientes a nivel nacional",
+      "Catálogo digital accesible 24/7",
+      "Mejor presentación de productos",
+    ],
+  },
 
+  {
+    id: 2,
+    title: "Esta pagina",
+    description:
+      "Desarrollamos nuestra web de una manera sencilla de comprender para nuestros clientes",
+    image: "/portada_solu.png",
+    privado: false,
+    url: "https://www.solutiacorp.co/",
+    beneficios: [
+      "Imagen profesional para la empresa",
+      "Mejor comunicación con clientes",
+      "Explicación clara de los servicios",
+      "Mayor confianza en la marca",
+    ],
+  },
 
-  const projets = [
-    {
-      id: 1,
-      title: "Joyeria italiana",
-      description: "Joyeria italiana digitalizó su catalogo para asi lograr mas clientes a nivel nacional",
-      image: "/portada_web.png",
-      privado: false,
-      url: "https://joyeriaitaliana.com/",
+  {
+    id: 3,
+    title: "DashGestion",
+    description: "Gestiona tus ventas e inventario en un solo lugar",
+    image: "/portal_gestion.png",
+    privado: true,
+    url: "/portada_web.png",
+    beneficios: [
+      "Control centralizado de inventario",
+      "Registro automático de ventas",
+      "Reducción de errores manuales",
+      "Reportes para toma de decisiones",
+    ],
+  },
 
+  {
+    id: 4,
+    title: "FerreMag",
+    description:
+      "Tienda de ferreteria digitalizada, con una interfaz intuitiva y un diseño moderno",
+    image: "/ferre_mag.png",
+    privado: true,
+    url: "/portada_web.png",
+    beneficios: [
+      "Catálogo digital de productos",
+      "Mayor alcance de clientes",
+      "Mejor experiencia de compra",
+      "Optimización del proceso de ventas",
+    ],
+  },
 
-    },
-    {
-      id: 2,
-      title: "Esta pagina",
-      description: "Desarrollamos nuestra web de una manera sencilla de comprender para nuestros clientes",
-      image: "/portada_solu.png",
-      privado: false,
-      url: "https://www.solutiacorp.co/",
-
-    }
-    ,
-
-    {
-      id: 3,
-      title: "DashGestion",
-      description: "Gestiona tus ventas e inventario en un solo lugar",
-      image: "/portal_gestion.png",
-      privado: true,
-      url: "/portada_web.png",
-
-    },
-
-
-    {
-      id: 4,
-      title: "FerreMag",
-      description: "Tienda de ferreteria digitalizada, con una interfaz intuitiva y un diseño moderno",
-      image: "/ferre_mag.png",
-      privado: true,
-      url: "/portada_web.png",
-
-    },
-
-    {
-      id: 5,
-      title: "Fraktur",
-      description: "Aplicacion movil que conecta médicos con pacientes de manera segura y eficiente",
-      image: "/fraktur.png",
-      privado: false,
-      url: "https://play.google.com/store/apps/details?id=com.medical.fraktur.hn&hl=es_CO",
-
-    },
-
-
-
-
-
-  ]
-
+  {
+    id: 5,
+    title: "Fraktur",
+    description:
+      "Aplicacion movil que conecta médicos con pacientes de manera segura y eficiente",
+    image: "/fraktur.png",
+    privado: false,
+    url: "https://play.google.com/store/apps/details?id=com.medical.fraktur.hn&hl=es_CO",
+    beneficios: [
+      "Conexión directa entre médicos y pacientes",
+      "Mayor accesibilidad a servicios médicos",
+      "Gestión segura de información",
+      "Atención médica más rápida",
+    ],
+  },
+];
 
   return (
     <section id="proyectos" className="relative overflow-hidden  bg-white py-20">
@@ -91,7 +112,7 @@ export function MetricsSection() {
 
           {
             projets.map((item) => (
-              <CourseCard {...item} key={item.id} />
+              <CourseCard   {...item} key={item.id} />
             ))
           }
 
@@ -112,16 +133,26 @@ export function MetricsSection() {
 // import { useState } from "react";
 // import Image from "next/image";
 
-interface cardProps {
+
+interface CardProps {
   title: string;
   description: string;
   image: string;
   url?: string;
   fullDescription?: string;
-  privado: boolean
+  privado: boolean;
+  beneficios: string[];
 }
 
-export function CourseCard({ privado, title, description, image, url = "#", fullDescription }: cardProps) {
+export function CourseCard({
+  beneficios,
+  privado,
+  title,
+  description,
+  image,
+  url = "#",
+  fullDescription,
+}: CardProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -132,14 +163,13 @@ export function CourseCard({ privado, title, description, image, url = "#", full
         className="bg-white group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-200 cursor-pointer"
       >
         <div className="relative w-full h-80 md:h-64 lg:h-44 overflow-hidden bg-gray-100">
-          {/* Imagen de fondo borrosa */}
           <Image
             src={image}
             alt=""
             fill
             className="object-cover blur-xl opacity-50"
           />
-          {/* Imagen principal */}
+
           <Image
             src={image}
             alt={title}
@@ -154,6 +184,7 @@ export function CourseCard({ privado, title, description, image, url = "#", full
               {title}
             </span>
           </h3>
+
           <p className="pt-2 text-base font-semibold text-gray-500 group-hover:text-gray-900">
             {description}
           </p>
@@ -170,7 +201,7 @@ export function CourseCard({ privado, title, description, image, url = "#", full
             className="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Imagen del modal */}
+            {/* Imagen */}
             <div className="relative w-full h-56 bg-gray-100">
               <Image
                 src={image}
@@ -178,12 +209,14 @@ export function CourseCard({ privado, title, description, image, url = "#", full
                 fill
                 className="object-cover blur-xl opacity-40"
               />
+
               <Image
                 src={image}
                 alt={title}
                 fill
                 className="object-contain relative z-10"
               />
+
               {/* Botón cerrar */}
               <button
                 onClick={() => setIsOpen(false)}
@@ -193,33 +226,50 @@ export function CourseCard({ privado, title, description, image, url = "#", full
               </button>
             </div>
 
-            {/* Contenido del modal */}
+            {/* Contenido */}
             <div className="p-6">
               <span className="bg-blue-600 py-1 px-3 text-white text-sm rounded-lg">
                 {title}
               </span>
+
               <p className="mt-4 text-gray-600 text-sm leading-relaxed">
                 {fullDescription || description}
               </p>
+
+              {/* Beneficios */}
+              {beneficios && beneficios.length > 0 && (
+                <div className="mt-5">
+                  <h3 className="text-sm font-semibold text-gray-800 mb-2">
+                    Mejoras obtenidas
+                  </h3>
+
+                  <ul className="space-y-1 text-sm text-gray-600">
+                    {beneficios.map((beneficio, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-blue-600 font-bold">✓</span>
+                        {beneficio}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Botones */}
               <div className="mt-6 flex gap-3">
-
-                {privado ? <div className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-lg font-semibold transition duration-200">Este proyecto es de uso privado</div> : <a
-
-
-                  href={url}
-
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-lg font-semibold transition duration-200"
-                >
-                  {privado ? "Este proyecto es de uso privado" : "Visitar proyecto"}
-
-                </a>
-
-
-                }
-
-
+                {privado ? (
+                  <div className="flex-1 bg-blue-600 text-white text-center py-2.5 rounded-lg font-semibold">
+                    Este proyecto es de uso privado
+                  </div>
+                ) : (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-lg font-semibold transition duration-200"
+                  >
+                    Visitar proyecto
+                  </a>
+                )}
 
                 <button
                   onClick={() => setIsOpen(false)}
