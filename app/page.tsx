@@ -5,12 +5,15 @@ import { ServicesSection } from "@/components/services-section"
 import { ProjectsSection } from "@/components/projects-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+import { ProblemSolutionSection } from "@/components/problems-section"
 
 export default function HomePage() {
   return (
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <ProblemSolutionSection />
+
       <ServicesSection />
       <MetricsSection />
       {/* <ProjectsSection /> */}
