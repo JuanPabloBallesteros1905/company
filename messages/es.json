@@ -1,0 +1,295 @@
+{
+  "metadata": {
+    "homeTitle": "Nexus Digital Solutions | Soluciones IT & Desarrollo",
+    "homeDescription": "Desarrollamos aplicaciones móviles, automatizaciones y sistemas a medida que garantizan seguridad, eficiencia y una ventaja competitiva real.",
+    "aboutTitle": "Sobre Nosotros | Nexus Digital Solutions",
+    "aboutDescription": "Conoce a Nexus Digital, una startup colombiana con corazón latinoamericano que impulsa la transformación digital y el desarrollo de software a medida en la región."
+  },
+  "nav": {
+    "inicio": "Inicio",
+    "servicios": "Servicios",
+    "proyectos": "Proyectos",
+    "contacto": "Contacto",
+    "sobreNosotros": "Sobre nosotros",
+    "toggleMenu": "Toggle menu"
+  },
+  "hero": {
+    "h1_line1": "Desarrollo de software a medida para empresas",
+    "h1_line2": "para automatizar y escalar tu negocio",
+    "description": "Creamos aplicaciones web, apps móviles y software a medida que automatiza procesos, mejora la eficiencia y aumenta las ventas de tu empresa.",
+    "cta": "Agendar llamada gratuita"
+  },
+  "heroShowcase": {
+    "card1": {
+      "title": "Desarrollo Web y Ventas Digitales",
+      "badge": "Marketing",
+      "description": "Atrae clientes, mejora tu posicionamiento en Google y vende 24/7 con tu sitio web.",
+      "speed": "Velocidad",
+      "conversion": "Conversión",
+      "seo": "SEO",
+      "ux": "UX"
+    },
+    "card2": {
+      "title": "Sistemas de Gestión Empresarial",
+      "badge": "Control",
+      "description": "Centraliza tu información y toma decisiones con datos en tiempo real.",
+      "dashboard": "Dashboard",
+      "cloudSystem": "Cloud System",
+      "liveMetrics": "Métricas en vivo"
+    },
+    "card3": {
+      "title": "Software a Medida y Automatización",
+      "badge": "Operaciones",
+      "description": "Automatiza tareas repetitivas, reduce errores y ahorra horas de trabajo cada día.",
+      "efficiency": "+45% Eficiencia",
+      "items": ["Facturación Automática", "Control de Inventario", "Sincronización de sistemas"],
+      "optimization": "Optimización Activa",
+      "automationFooter": "Automatización sin errores manuales"
+    }
+  },
+  "problems": {
+    "h2_line1": "Lleva tu negocio local al mundo digital",
+    "h2_line2": "y empieza a atraer más clientes",
+    "description": "Si tu negocio no tiene presencia online o sigue dependiendo de procesos manuales, estás perdiendo visibilidad, tiempo y oportunidades de venta todos los días.",
+    "problemHeader": "Lo que está pasando",
+    "problems": [
+      "No apareces en Google",
+      "Pierdes tiempo en procesos manuales",
+      "No tienes sistemas conectados"
+    ],
+    "solutionHeader": "Lo que puedes lograr",
+    "solutions": [
+      "Más clientes",
+      "Más ventas",
+      "Menos trabajo manual",
+      "Mayor visibilidad"
+    ],
+    "ctaText": "Empieza a competir en el mundo digital hoy mismo",
+    "cta": "Agendar llamada gratuita"
+  },
+  "services": {
+    "badge": "Servicios Especializados",
+    "h2_line1": "Soluciones tecnológicas",
+    "h2_line2": "para cada desafío",
+    "description": "Servicios integrales diseñados para impulsar la eficiencia operativa y el crecimiento sostenible de su organización",
+    "items": [
+      {
+        "title": "Desarrollo de Aplicaciones Móviles",
+        "description": "Aplicaciones nativas y multiplataforma con arquitectura escalable, optimizadas para rendimiento y experiencia de usuario excepcional.",
+        "features": ["iOS & Android", "React Native", "Flutter"],
+        "time": "8-12 semanas",
+        "success": "98%"
+      },
+      {
+        "title": "Soluciones Digitales a Medida",
+        "description": "Sistemas empresariales personalizados que se integran con su infraestructura existente y escalan según sus necesidades de negocio.",
+        "features": ["Escalable", "Cloud-native", "API-first"],
+        "time": "12-16 semanas",
+        "success": "95%"
+      },
+      {
+        "title": "Automatización de Procesos (RPA)",
+        "description": "Automatización inteligente de flujos de trabajo que reduce costos operativos hasta un 40% y elimina errores manuales.",
+        "features": ["RPA", "Workflows", "Integración"],
+        "time": "4-8 semanas",
+        "success": "92%"
+      },
+      {
+        "title": "Consultoría & Estrategia Tech",
+        "description": "Asesoramiento estratégico basado en análisis de datos para optimizar su inversión tecnológica y acelerar la transformación digital.",
+        "features": ["Auditorías", "Roadmaps", "Due Diligence"],
+        "time": "2-4 semanas",
+        "success": "100%"
+      }
+    ],
+    "ctaPrefix": "¿No encuentras lo que necesitas?",
+    "cta": "Hablemos de su proyecto"
+  },
+  "metrics": {
+    "h2_line1": "Resultados que respaldan",
+    "h2_line2": "nuestra experiencia",
+    "projects": [
+      {
+        "title": "Joyeria italiana",
+        "description": "Joyeria italiana digitalizó su catalogo para asi lograr mas clientes a nivel nacional",
+        "benefits": [
+          "Mayor visibilidad en internet",
+          "Incremento de clientes a nivel nacional",
+          "Catálogo digital accesible 24/7",
+          "Mejor presentación de productos"
+        ]
+      },
+      {
+        "title": "Esta pagina",
+        "description": "Desarrollamos nuestra web de una manera sencilla de comprender para nuestros clientes",
+        "benefits": [
+          "Imagen profesional para la empresa",
+          "Mejor comunicación con clientes",
+          "Explicación clara de los servicios",
+          "Mayor confianza en la marca"
+        ]
+      },
+      {
+        "title": "DashGestion",
+        "description": "Gestiona tus ventas e inventario en un solo lugar",
+        "benefits": [
+          "Control centralizado de inventario",
+          "Registro automático de ventas",
+          "Reducción de errores manuales",
+          "Reportes para toma de decisiones"
+        ]
+      },
+      {
+        "title": "FerreMag",
+        "description": "Tienda de ferreteria digitalizada, con una interfaz intuitiva y un diseño moderno",
+        "benefits": [
+          "Catálogo digital de productos",
+          "Mayor alcance de clientes",
+          "Mejor experiencia de compra",
+          "Optimización del proceso de ventas"
+        ]
+      },
+      {
+        "title": "Fraktur",
+        "description": "Aplicacion movil que conecta médicos con pacientes de manera segura y eficiente",
+        "benefits": [
+          "Conexión directa entre médicos y pacientes",
+          "Mayor accesibilidad a servicios médicos",
+          "Gestión segura de información",
+          "Atención médica más rápida"
+        ]
+      }
+    ],
+    "modal": {
+      "improvements": "Mejoras obtenidas",
+      "private": "Este proyecto es de uso privado",
+      "visit": "Visitar proyecto",
+      "close": "Cerrar"
+    }
+  },
+  "contact": {
+    "h2": "Cuentanos tu idea",
+    "description": "Primera consultoría gratuita y sin compromiso",
+    "location": "Santa Marta, Colombia",
+    "trust": [
+      {
+        "title": "Respuesta en 24h",
+        "subtitle": "Nos comunicamos rápido"
+      },
+      {
+        "title": "100% Confidencial",
+        "subtitle": "Datos protegidos"
+      },
+      {
+        "title": "Sin compromiso",
+        "subtitle": "Consultoría gratuita"
+      }
+    ]
+  },
+  "contactForm": {
+    "labels": {
+      "fullName": "Nombre completo",
+      "company": "Empresa",
+      "email": "Email",
+      "service": "Servicio de interés",
+      "message": "Mensaje",
+      "privacy": "Acepto la <link>política de privacidad</link>"
+    },
+    "placeholders": {
+      "fullName": "Juan Pérez",
+      "company": "Mi Empresa S.A.",
+      "email": "juan@empresa.com",
+      "service": "Seleccione un servicio",
+      "message": "Cuéntenos sobre su proyecto..."
+    },
+    "services": {
+      "mobile": "Desarrollo de Aplicaciones Móviles",
+      "custom": "Soluciones Digitales a Medida",
+      "automation": "Automatización de Procesos (RPA)",
+      "consulting": "Consultoría & Estrategia Tech"
+    },
+    "validation": {
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "emailInvalid": "Email inválido",
+      "serviceRequired": "Por favor seleccione un servicio",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres",
+      "privacyRequired": "Debe aceptar la política de privacidad"
+    },
+    "success": "¡Gracias! Su solicitud ha sido enviada exitosamente. Recibirá una respuesta pronto.",
+    "error": "Hubo un error al enviar el formulario. Por favor, inténtelo de nuevo.",
+    "submit": "Enviar solicitud",
+    "submitting": "Enviando..."
+  },
+  "footer": {
+    "companyName": "Nexus Digital",
+    "tagline": "Soluciones tecnológicas para empresas que buscan eficiencia, seguridad y crecimiento sostenible.",
+    "empresa": "Empresa",
+    "servicios": "Servicios",
+    "contacto": "Contacto",
+    "companyLinks": [
+      { "label": "Inicio", "id": "inicio" },
+      { "label": "Servicios", "id": "servicios" },
+      { "label": "Casos de Éxito", "id": "proyectos" },
+      { "label": "Nosotros", "id": "sobre-nosotros" },
+      { "label": "Contacto", "id": "contacto" }
+    ],
+    "serviceLinks": [
+      "Desarrollo de Apps Móviles",
+      "Sistemas Empresariales",
+      "Automatización RPA",
+      "Consultoría Tecnológica",
+      "Cloud & DevOps",
+      "Ciberseguridad"
+    ],
+    "contactInfo": {
+      "email": "contacto@nexusdigital.com",
+      "phone": "+57 300 123 4567",
+      "location": "Cúcuta, Colombia",
+      "emailLabel": "Email",
+      "phoneLabel": "Teléfono",
+      "locationLabel": "Ubicación"
+    }
+  },
+  "about": {
+    "badge": "Nuestra Esencia",
+    "h1_line1": "Startup Colombiana con corazón",
+    "h1_line2": "latinoamericano",
+    "description": "En Solutia, ayudamos a los pequeños negocios a romper las barreras entre su mundo físico y el público digital. Sabemos que dar el salto al entorno online puede sentirse abrumador, por eso creamos soluciones de software claras, accesibles y adaptadas a la realidad de cada emprendedor. No se trata solo de tecnología, se trata de abrir puertas, conectar con nuevas personas y hacer crecer lo que con tanto esfuerzo han construido.",
+    "cards": [
+      {
+        "title": "Conectamos negocios",
+        "description": "Del mundo físico al digital, sin complicaciones."
+      },
+      {
+        "title": "Pasión por crecer",
+        "description": "Ver negocios florecer nos mueve."
+      },
+      {
+        "title": "Tecnología accesible",
+        "description": "Software claro, simple y seguro."
+      }
+    ]
+  },
+  "projects": {
+    "badge": "Casos de Éxito",
+    "h2_line1": "Proyectos que generan",
+    "h2_line2": "resultados medibles",
+    "description": "Soluciones tecnológicas implementadas en empresas líderes de diversos sectores",
+    "industriesTitle": "Industrias atendidas",
+    "cta": "Explorar Más Casos de Éxito",
+    "ctaPrompt": "¿Tiene un proyecto en mente?",
+    "ctaLink": "Hablemos",
+    "viewMore": "Ver caso completo"
+  },
+  "projectCard": {
+    "technologies": "Tecnologías:"
+  },
+  "serviceCard": {
+    "discoverMore": "Descubrir más"
+  },
+  "langSwitcher": {
+    "es": "ES",
+    "en": "EN",
+    "label": "Idioma"
+  }
+}

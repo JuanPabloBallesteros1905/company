@@ -1,8 +1,10 @@
 "use client"
+import { useTranslations, useMessages } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Globe, Zap, TrendingUp, BarChart3, CheckCircle, Terminal, Code2, Server, Rocket, MousePointer2, ArrowUpRight } from "lucide-react"
 
 export function HeroSection() {
+  const t = useTranslations()
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -33,13 +35,13 @@ export function HeroSection() {
           <div className="space-y-8 animate-in fade-in slide-in-from-left-6 duration-700">
             <header className="space-y-4">
               <h1 className="text-5xl font-bold tracking-tight text-slate-900 lg:text-6xl xl:text-6xl">
-                Desarrollo de software a medida para empresas
-                <span className="block text-blue-600 mt-2">para automatizar y escalar tu negocio</span>
+                {t("hero.h1_line1")}
+                <span className="block text-blue-600 mt-2">{t("hero.h1_line2")}</span>
               </h1>
 
 
               <p className="text-lg text-slate-600 max-w-lg leading-relaxed">
-                Creamos aplicaciones web, apps móviles y software a medida que automatiza procesos, mejora la eficiencia y aumenta las ventas de tu empresa.
+                {t("hero.description")}
               </p>
             </header>
 
@@ -51,7 +53,7 @@ export function HeroSection() {
                 className="group bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-all px-8 rounded-full"
                 onClick={() => scrollToSection("contacto")}
               >
-                Agendar llamada gratuita
+                {t("hero.cta")}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
@@ -67,6 +69,11 @@ export function HeroSection() {
 }
 
 const BusinessSolutionShowcase = () => {
+  const t = useTranslations("heroShowcase")
+  const messages = useMessages()
+  const heroShowcaseMsgs = (messages as Record<string, any>).heroShowcase || {}
+  const card3Items: string[] = (heroShowcaseMsgs as any).card3?.items || []
+
   return (
     <div className="w-full max-w-[1350px] mx-auto p-2">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -75,10 +82,10 @@ const BusinessSolutionShowcase = () => {
         <div className="group animate-in fade-in slide-in-from-bottom-10 duration-700 delay-200 fill-mode-forwards">
           <header className="mb-5 h-20 flex flex-col justify-end">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="text-xl font-bold text-slate-900 tracking-tight">Desarrollo Web y Ventas Digitales</h3>
-              <span className="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md uppercase">Marketing</span>
+              <h3 className="text-xl font-bold text-slate-900 tracking-tight">{t("card1.title")}</h3>
+              <span className="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md uppercase">{t("card1.badge")}</span>
             </div>
-            <p className="text-sm text-slate-500 leading-tight">Atrae clientes, mejora tu posicionamiento en Google y vende 24/7 con tu sitio web.</p>
+            <p className="text-sm text-slate-500 leading-tight">{t("card1.description")}</p>
           </header>
 
           <div className="relative h-[480px] rounded-3xl border border-slate-200 bg-white shadow-xl overflow-hidden transition-all duration-300 group-hover:border-blue-400 group-hover:shadow-blue-500/5">
@@ -96,18 +103,18 @@ const BusinessSolutionShowcase = () => {
               <div className="grid grid-cols-2 gap-3 pt-4">
                 <div className="h-24 rounded-2xl bg-blue-50 border border-blue-100 p-4 flex flex-col justify-between">
                   <Zap className="h-5 w-5 text-blue-600" />
-                  <span className="text-[10px] font-bold text-blue-900 uppercase">Velocidad</span>
+                  <span className="text-[10px] font-bold text-blue-900 uppercase">{t("card1.speed")}</span>
                 </div>
                 <div className="h-24 rounded-2xl bg-slate-50 border border-slate-100 p-4 flex flex-col justify-between">
                   <TrendingUp className="h-5 w-5 text-emerald-500" />
-                  <span className="text-[10px] font-bold text-slate-700 uppercase">Conversión</span>
+                  <span className="text-[10px] font-bold text-slate-700 uppercase">{t("card1.conversion")}</span>
                 </div>
               </div>
             </div>
             <footer className="absolute bottom-0 w-full p-4 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
               <div className="flex gap-1">
-                <span className="px-2 py-1 bg-white border border-slate-200 rounded text-[9px] font-bold text-slate-400">SEO</span>
-                <span className="px-2 py-1 bg-white border border-slate-200 rounded text-[9px] font-bold text-slate-400">UX</span>
+                <span className="px-2 py-1 bg-white border border-slate-200 rounded text-[9px] font-bold text-slate-400">{t("card1.seo")}</span>
+                <span className="px-2 py-1 bg-white border border-slate-200 rounded text-[9px] font-bold text-slate-400">{t("card1.ux")}</span>
               </div>
               <ArrowUpRight className="h-4 w-4 text-blue-600" />
             </footer>
@@ -118,16 +125,16 @@ const BusinessSolutionShowcase = () => {
         <div className="group lg:-translate-y-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-400 fill-mode-forwards">
           <header className="mb-5 h-20 flex flex-col justify-end">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="text-xl font-bold text-slate-900 tracking-tight">Sistemas de Gestión Empresarial</h3>
-              <span className="text-[10px] font-bold bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-md uppercase">Control</span>
+              <h3 className="text-xl font-bold text-slate-900 tracking-tight">{t("card2.title")}</h3>
+              <span className="text-[10px] font-bold bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-md uppercase">{t("card2.badge")}</span>
             </div>
-            <p className="text-sm text-slate-500 leading-tight">Centraliza tu información y toma decisiones con datos en tiempo real.</p>
+            <p className="text-sm text-slate-500 leading-tight">{t("card2.description")}</p>
           </header>
 
           <div className="relative h-[480px] rounded-3xl bg-slate-950 shadow-2xl overflow-hidden border border-slate-800 transition-all duration-300 group-hover:shadow-blue-500/10">
             <div className="p-6 space-y-8">
               <div className="flex justify-between items-center border-b border-white/5 pb-4">
-                <div className="text-[10px] text-blue-400 font-bold uppercase tracking-widest">Dashboard</div>
+                <div className="text-[10px] text-blue-400 font-bold uppercase tracking-widest">{t("card2.dashboard")}</div>
                 <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]" />
               </div>
               <div className="space-y-1">
@@ -144,13 +151,13 @@ const BusinessSolutionShowcase = () => {
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Server className="h-3 w-3 text-slate-500" />
-                  <span className="text-[10px] text-slate-300 font-mono">Cloud System</span>
+                  <span className="text-[10px] text-slate-300 font-mono">{t("card2.cloudSystem")}</span>
                 </div>
                 <CheckCircle className="h-3 w-3 text-emerald-500" />
               </div>
             </div>
             <footer className="absolute bottom-0 w-full p-4 bg-white/5 border-t border-white/5 flex justify-between items-center">
-              <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Métricas en vivo</span>
+              <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">{t("card2.liveMetrics")}</span>
               <BarChart3 className="h-3 w-3 text-white" />
             </footer>
           </div>
@@ -160,10 +167,10 @@ const BusinessSolutionShowcase = () => {
         <div className="group animate-in fade-in slide-in-from-bottom-10 duration-700 delay-600 fill-mode-forwards">
           <header className="mb-5 h-20 flex flex-col justify-end">
             <div className="flex items-center gap-2 mb-1 lg:justify-start justify-end">
-              <h3 className="text-xl font-bold text-slate-900 tracking-tight">Software a Medida y Automatización</h3>
-              <span className="text-[10px] font-bold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md uppercase">Operaciones</span>
+              <h3 className="text-xl font-bold text-slate-900 tracking-tight">{t("card3.title")}</h3>
+              <span className="text-[10px] font-bold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md uppercase">{t("card3.badge")}</span>
             </div>
-            <p className="text-sm text-slate-500 leading-tight lg:text-left text-right">Automatiza tareas repetitivas, reduce errores y ahorra horas de trabajo cada día.</p>
+            <p className="text-sm text-slate-500 leading-tight lg:text-left text-right">{t("card3.description")}</p>
           </header>
 
           <div className="relative h-[480px] rounded-3xl border border-slate-200 bg-slate-50/50 shadow-xl overflow-hidden transition-all duration-300 group-hover:border-emerald-400 group-hover:shadow-emerald-500/5">
@@ -172,10 +179,10 @@ const BusinessSolutionShowcase = () => {
                 <div className="h-10 w-10 bg-white rounded-xl shadow-sm flex items-center justify-center">
                   <Rocket className="h-5 w-5 text-emerald-600" />
                 </div>
-                <div className="text-right font-bold text-emerald-600 text-xs">+45% Eficiencia</div>
+                <div className="text-right font-bold text-emerald-600 text-xs">{t("card3.efficiency")}</div>
               </div>
               <div className="space-y-3">
-                {["Facturación Automática", "Control de Inventario", "Sincronización de sistemas"].map((l, i) => (
+                {card3Items.map((l, i) => (
                   <div key={i} className="bg-white p-3.5 rounded-2xl border border-slate-100 flex items-center justify-between shadow-sm group-hover:translate-x-1 transition-transform duration-300">
                     <span className="text-xs font-bold text-slate-700">{l}</span>
                     <CheckCircle className="h-3 w-3 text-emerald-500" />
@@ -184,11 +191,11 @@ const BusinessSolutionShowcase = () => {
               </div>
               <div className="mt-8 p-4 bg-slate-900 rounded-2xl flex items-center gap-3">
                 <Terminal className="h-4 w-4 text-emerald-400" />
-                <span className="text-[10px] font-bold text-white uppercase tracking-tighter">Optimización Activa</span>
+                <span className="text-[10px] font-bold text-white uppercase tracking-tighter">{t("card3.optimization")}</span>
               </div>
             </div>
             <footer className="absolute bottom-0 w-full p-4 bg-emerald-50 border-t border-emerald-100 flex justify-between items-center">
-              <span className="text-[9px] font-bold text-emerald-700 uppercase tracking-widest">Automatización sin errores manuales</span>
+              <span className="text-[9px] font-bold text-emerald-700 uppercase tracking-widest">{t("card3.automationFooter")}</span>
               <MousePointer2 className="h-4 w-4 text-emerald-600" />
             </footer>
           </div>

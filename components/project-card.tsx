@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
@@ -8,7 +9,9 @@ interface ProjectCardProps {
   technologies: string[]
 }
 
-export function ProjectCard({ name, sector, description, technologies }: ProjectCardProps) {
+export async function ProjectCard({ name, sector, description, technologies }: ProjectCardProps) {
+  const t = await getTranslations("projectCard")
+
   return (
     <Card className="flex h-full flex-col transition-all hover:shadow-lg">
       <CardHeader>
@@ -21,7 +24,7 @@ export function ProjectCard({ name, sector, description, technologies }: Project
         <CardDescription className="leading-relaxed">{description}</CardDescription>
       </CardHeader>
       <CardContent className="mt-auto">
-        <div className="text-sm font-medium text-muted-foreground">Tecnologías:</div>
+        <div className="text-sm font-medium text-muted-foreground">{t("technologies")}:</div>
         <div className="mt-2 flex flex-wrap gap-2">
           {technologies.map((tech, index) => (
             <Badge key={index} variant="outline" className="text-xs">

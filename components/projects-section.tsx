@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, TrendingUp, Users, Package, Clock, Award, Building2, BarChart3 } from "lucide-react"
@@ -56,7 +57,8 @@ const stats = [
   { icon: Users, label: "Clientes recurrentes", value: "78%", subtext: "Tasa de retención" },
 ]
 
-export function ProjectsSection() {
+export async function ProjectsSection() {
+  const t = await getTranslations("projects")
   return (
     <section id="proyectos" className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-24 border-b border-slate-200">
       {/* Subtle pattern background */}
@@ -76,16 +78,16 @@ export function ProjectsSection() {
         <div className="mb-20 text-center max-w-3xl mx-auto">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 shadow-sm">
             <div className="h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse" />
-            <span className="text-xs font-medium text-slate-600 tracking-wide uppercase">Casos de Éxito</span>
+            <span className="text-xs font-medium text-slate-600 tracking-wide uppercase">{t("badge")}</span>
           </div>
           
           <h2 className="mb-6 text-4xl font-bold tracking-tight lg:text-5xl text-slate-900">
-            Proyectos que generan
-            <span className="block text-blue-600 mt-2">resultados medibles</span>
+            {t("h2_line1")}
+            <span className="block text-blue-600 mt-2">{t("h2_line2")}</span>
           </h2>
           
           <p className="text-lg text-slate-600 leading-relaxed">
-            Soluciones tecnológicas implementadas en empresas líderes de diversos sectores
+            {t("description")}
           </p>
         </div>
 
@@ -172,7 +174,7 @@ export function ProjectsSection() {
                     
                     {/* View more link */}
                     <button className="group/btn flex items-center gap-2 text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700">
-                      Ver caso completo
+                      {t("viewMore")}
                       <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />
                     </button>
                   </div>
@@ -206,7 +208,7 @@ export function ProjectsSection() {
 
         {/* Industry sectors */}
         <div className="mb-16 text-center">
-          <h3 className="text-xl font-bold text-slate-900 mb-6">Industrias atendidas</h3>
+          <h3 className="text-xl font-bold text-slate-900 mb-6">{t("industriesTitle")}</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
               "Retail & E-commerce",
@@ -231,14 +233,14 @@ export function ProjectsSection() {
             size="lg"
             className="bg-blue-600 text-white shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all px-8"
           >
-            Explorar Más Casos de Éxito
+            {t("cta")}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           
           <p className="mt-6 text-sm text-slate-600">
-            ¿Tiene un proyecto en mente?{" "}
+            {t("ctaPrompt")}{" "}
             <a href="#contacto" className="font-semibold text-blue-600 hover:text-blue-700 underline decoration-blue-200 underline-offset-4">
-              Hablemos
+              {t("ctaLink")}
             </a>
           </p>
         </div>

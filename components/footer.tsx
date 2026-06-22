@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { Link, usePathname, useRouter } from "@/i18n/routing"
 import {
   Mail,
   Phone,
@@ -11,9 +11,23 @@ import {
   ArrowUp,
 } from "lucide-react"
 import Image from "next/image"
-import { usePathname, useRouter } from "next/navigation"
+import { useMessages, useTranslations } from "next-intl"
 
 export function Footer() {
+  const t = useTranslations("footer")
+  const messages = useMessages()
+  const footerMessages = (messages as Record<string, any>).footer
+  const companyLinks = footerMessages.companyLinks as { label: string; id: string }[]
+  const serviceLinks = footerMessages.serviceLinks as string[]
+  const contact = footerMessages.contactInfo as {
+    email: string
+    phone: string
+    location: string
+    emailLabel: string
+    phoneLabel: string
+    locationLabel: string
+  }
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
@@ -51,13 +65,12 @@ export function Footer() {
                 />
               
               <span className="text-base font-semibold text-slate-900">
-                Nexus Digital
+                {t("companyName")}
               </span>
             </Link>
 
             <p className="mt-4 text-sm text-slate-600 max-w-xs">
-              Soluciones tecnológicas para empresas que buscan eficiencia,
-              seguridad y crecimiento sostenible.
+              {t("tagline")}
             </p>
 
             {/* Social Links */}
@@ -85,16 +98,10 @@ export function Footer() {
           {/* Company Links */}
           <div>
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
-              Empresa
+              {t("empresa")}
             </h3>
             <ul className="space-y-2">
-              {[
-                { label: "Inicio", id: "inicio" },
-                { label: "Servicios", id: "servicios" },
-                { label: "Casos de Éxito", id: "proyectos" },
-                { label: "Nosotros", id: "sobre-nosotros" },
-                { label: "Contacto", id: "contacto" },
-              ].map((link, idx) => (
+              {companyLinks.map((link, idx) => (
                 <li key={idx}>
                   <button
                     onClick={() => scrollToSection(link.id)}
@@ -110,17 +117,10 @@ export function Footer() {
           {/* Services */}
           <div>
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
-              Servicios
+              {t("servicios")}
             </h3>
             <ul className="space-y-2 text-sm text-slate-600">
-              {[
-                "Desarrollo de Apps Móviles",
-                "Sistemas Empresariales",
-                "Automatización RPA",
-                "Consultoría Tecnológica",
-                "Cloud & DevOps",
-                "Ciberseguridad",
-              ].map((service, idx) => (
+              {serviceLinks.map((service, idx) => (
                 <li key={idx}>
                   <span className="cursor-pointer transition-colors hover:text-slate-900">
                     {service}
@@ -133,32 +133,32 @@ export function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
-              Contacto
+              {t("contacto")}
             </h3>
             <ul className="space-y-3 text-sm text-slate-600">
               <li>
                 <a
-                  href="mailto:contacto@nexusdigital.com"
+                  href={`mailto:${contact.email}`}
                   className="flex items-start gap-3 transition-colors hover:text-slate-900"
                 >
                   <Mail className="mt-[2px] h-4 w-4 text-slate-400" />
                   <div>
-                    <div className="text-xs text-slate-500">Email</div>
+                    <div className="text-xs text-slate-500">{contact.emailLabel}</div>
                     <div className="font-medium">
-                      contacto@nexusdigital.com
+                      {contact.email}
                     </div>
                   </div>
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+573001234567"
+                  href={`tel:${contact.phone.replace(/\s/g, "")}`}
                   className="flex items-start gap-3 transition-colors hover:text-slate-900"
                 >
                   <Phone className="mt-[2px] h-4 w-4 text-slate-400" />
                   <div>
-                    <div className="text-xs text-slate-500">Teléfono</div>
-                    <div className="font-medium">+57 300 123 4567</div>
+                    <div className="text-xs text-slate-500">{contact.phoneLabel}</div>
+                    <div className="font-medium">{contact.phone}</div>
                   </div>
                 </a>
               </li>
@@ -166,8 +166,8 @@ export function Footer() {
                 <div className="flex items-start gap-3">
                   <MapPin className="mt-[2px] h-4 w-4 text-slate-400" />
                   <div>
-                    <div className="text-xs text-slate-500">Ubicación</div>
-                    <div className="font-medium">Cúcuta, Colombia</div>
+                    <div className="text-xs text-slate-500">{contact.locationLabel}</div>
+                    <div className="font-medium">{contact.location}</div>
                   </div>
                 </div>
               </li>
@@ -179,11 +179,3 @@ export function Footer() {
     </footer>
   )
 }
-
-
-
-
-
-
-
-

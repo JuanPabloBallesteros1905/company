@@ -1,9 +1,15 @@
 "use client"
 
+import { useTranslations, useMessages } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, AlertTriangle, CheckCircle2 } from "lucide-react"
 
 export function ProblemSolutionSection() {
+  const t = useTranslations()
+  const messages = useMessages()
+  const problemsData = (messages as Record<string, any>).problems || {}
+  const problems: string[] = problemsData.problems || []
+  const solutions: string[] = problemsData.solutions || []
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -33,15 +39,14 @@ export function ProblemSolutionSection() {
         {/* HEADER */}
         <div className="mb-16 text-center max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-700">
           <h2 className="text-4xl font-bold tracking-tight text-slate-900 lg:text-5xl">
-            Lleva tu negocio local al mundo digital
+            {t("problems.h2_line1")}
             <span className="block text-blue-600 mt-2">
-              y empieza a atraer más clientes
+              {t("problems.h2_line2")}
             </span>
           </h2>
 
           <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-            Si tu negocio no tiene presencia online o sigue dependiendo de procesos manuales,
-            estás perdiendo visibilidad, tiempo y oportunidades de venta todos los días.
+            {t("problems.description")}
           </p>
         </div>
 
@@ -53,15 +58,11 @@ export function ProblemSolutionSection() {
             
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                Lo que está pasando
+                {t("problems.problemHeader")}
               </h3>
 
               <div className="space-y-4">
-                {[
-                  "No apareces en Google",
-                  "Pierdes tiempo en procesos manuales",
-                  "No tienes sistemas conectados",
-                ].map((item, i) => (
+                {problems.map((item, i) => (
                   <div
                     key={i}
                     className="flex items-center gap-3 p-4 rounded-xl border border-slate-200 bg-white shadow-sm"
@@ -82,24 +83,12 @@ export function ProblemSolutionSection() {
             
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                Lo que puedes lograr
+                {t("problems.solutionHeader")}
               </h3>
-
-              {/* <div className="p-4 rounded-2xl border border-blue-100 bg-blue-50/40 shadow-sm">
-                <p className="text-slate-800 font-medium leading-relaxed">
-                  Digitalizamos tu negocio para que sea visible en internet
-                  y atraiga más clientes.
-                </p>
-              </div> */}
 
               {/* BENEFICIOS */}
               <div className="grid grid-cols-2 gap-3 mt-4">
-                {[
-                  "Más clientes",
-                  "Más ventas",
-                  "Menos trabajo manual",
-                  "Mayor visibilidad",
-                ].map((item, i) => (
+                {solutions.map((item, i) => (
                   <div
                     key={i}
                     className="flex items-center gap-2 p-3 rounded-xl border border-slate-200 bg-white shadow-sm"
@@ -116,7 +105,7 @@ export function ProblemSolutionSection() {
             {/* CTA SIEMPRE ABAJO */}
             <div className="pt-4">
               <p className="text-sm text-slate-600 mb-4">
-                Empieza a competir en el mundo digital hoy mismo
+                {t("problems.ctaText")}
               </p>
 
               <Button
@@ -124,7 +113,7 @@ export function ProblemSolutionSection() {
                 className="group bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition-all px-8 rounded-full"
                 onClick={() => scrollToSection("contacto")}
               >
-                Agendar llamada gratuita
+                {t("problems.cta")}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>

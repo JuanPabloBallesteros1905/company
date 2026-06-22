@@ -1,15 +1,17 @@
 "use client"
 
-import Link from "next/link"
+import { Link, usePathname, useRouter } from "@/i18n/routing"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
-import { usePathname, useRouter } from "next/navigation"
+import { useTranslations } from "next-intl"
+import { LanguageSwitcher } from "@/components/language-switcher"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
+  const t = useTranslations("nav")
 
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false)
@@ -50,25 +52,25 @@ export function Navbar() {
             onClick={() => scrollToSection("inicio")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           >
-            Inicio
+            {t("inicio")}
           </button>
           <button
             onClick={() => scrollToSection("servicios")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           >
-            Servicios
+            {t("servicios")}
           </button>
           <button
             onClick={() => scrollToSection("proyectos")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           >
-            Proyectos
+            {t("proyectos")}
           </button>
           <button
             onClick={() => scrollToSection("contacto")}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           >
-            Contacto
+            {t("contacto")}
           </button>
           <Link
             href="/sobre-nosotros"
@@ -76,12 +78,13 @@ export function Navbar() {
               pathname === "/sobre-nosotros" ? "text-blue-600 font-semibold" : "text-muted-foreground"
             }`}
           >
-            Sobre nosotros
+            {t("sobreNosotros")}
           </Link>
+          <LanguageSwitcher />
         </div>
 
         {/* Mobile Menu Button */}
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden" aria-label="Toggle menu">
+        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden" aria-label={t("toggleMenu")}>
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
@@ -94,25 +97,25 @@ export function Navbar() {
               onClick={() => scrollToSection("inicio")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
             >
-              Inicio
+              {t("inicio")}
             </button>
             <button
               onClick={() => scrollToSection("servicios")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
             >
-              Servicios
+              {t("servicios")}
             </button>
             <button
               onClick={() => scrollToSection("proyectos")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
             >
-              Proyectos
+              {t("proyectos")}
             </button>
             <button
               onClick={() => scrollToSection("contacto")}
               className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
             >
-              Contacto
+              {t("contacto")}
             </button>
             <Link
               href="/sobre-nosotros"
@@ -121,8 +124,9 @@ export function Navbar() {
                 pathname === "/sobre-nosotros" ? "text-blue-600 font-semibold" : "text-muted-foreground"
               }`}
             >
-              Sobre nosotros
+              {t("sobreNosotros")}
             </Link>
+            <LanguageSwitcher />
           </div>
         </div>
       )}

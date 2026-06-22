@@ -1,0 +1,295 @@
+{
+  "metadata": {
+    "homeTitle": "Nexus Digital Solutions | IT Solutions & Development",
+    "homeDescription": "We develop mobile apps, automations, and custom systems that guarantee security, efficiency, and a real competitive advantage.",
+    "aboutTitle": "About Us | Nexus Digital Solutions",
+    "aboutDescription": "Meet Nexus Digital, a Colombian startup with a Latin American heart driving digital transformation and custom software development in the region."
+  },
+  "nav": {
+    "inicio": "Home",
+    "servicios": "Services",
+    "proyectos": "Projects",
+    "contacto": "Contact",
+    "sobreNosotros": "About us",
+    "toggleMenu": "Toggle menu"
+  },
+  "hero": {
+    "h1_line1": "Custom software development for businesses",
+    "h1_line2": "to automate and scale your business",
+    "description": "We create web apps, mobile apps, and custom software that automates processes, improves efficiency, and increases your company's sales.",
+    "cta": "Schedule a free call"
+  },
+  "heroShowcase": {
+    "card1": {
+      "title": "Web Development & Digital Sales",
+      "badge": "Marketing",
+      "description": "Attract clients, improve your Google ranking, and sell 24/7 with your website.",
+      "speed": "Speed",
+      "conversion": "Conversion",
+      "seo": "SEO",
+      "ux": "UX"
+    },
+    "card2": {
+      "title": "Business Management Systems",
+      "badge": "Control",
+      "description": "Centralize your information and make decisions with real-time data.",
+      "dashboard": "Dashboard",
+      "cloudSystem": "Cloud System",
+      "liveMetrics": "Live Metrics"
+    },
+    "card3": {
+      "title": "Custom Software & Automation",
+      "badge": "Operations",
+      "description": "Automate repetitive tasks, reduce errors, and save hours of work every day.",
+      "efficiency": "+45% Efficiency",
+      "items": ["Automatic Invoicing", "Inventory Control", "System Synchronization"],
+      "optimization": "Active Optimization",
+      "automationFooter": "Automation without manual errors"
+    }
+  },
+  "problems": {
+    "h2_line1": "Take your local business to the digital world",
+    "h2_line2": "and start attracting more clients",
+    "description": "If your business has no online presence or still relies on manual processes, you're losing visibility, time, and sales opportunities every day.",
+    "problemHeader": "What's happening",
+    "problems": [
+      "You don't appear on Google",
+      "You waste time on manual processes",
+      "Your systems aren't connected"
+    ],
+    "solutionHeader": "What you can achieve",
+    "solutions": [
+      "More clients",
+      "More sales",
+      "Less manual work",
+      "Greater visibility"
+    ],
+    "ctaText": "Start competing in the digital world today",
+    "cta": "Schedule a free call"
+  },
+  "services": {
+    "badge": "Specialized Services",
+    "h2_line1": "Technology solutions",
+    "h2_line2": "for every challenge",
+    "description": "Comprehensive services designed to boost operational efficiency and sustainable growth for your organization",
+    "items": [
+      {
+        "title": "Mobile App Development",
+        "description": "Native and cross-platform apps with scalable architecture, optimized for performance and exceptional user experience.",
+        "features": ["iOS & Android", "React Native", "Flutter"],
+        "time": "8-12 weeks",
+        "success": "98%"
+      },
+      {
+        "title": "Custom Digital Solutions",
+        "description": "Custom business systems that integrate with your existing infrastructure and scale according to your business needs.",
+        "features": ["Scalable", "Cloud-native", "API-first"],
+        "time": "12-16 weeks",
+        "success": "95%"
+      },
+      {
+        "title": "Process Automation (RPA)",
+        "description": "Intelligent workflow automation that reduces operational costs by up to 40% and eliminates manual errors.",
+        "features": ["RPA", "Workflows", "Integration"],
+        "time": "4-8 weeks",
+        "success": "92%"
+      },
+      {
+        "title": "Tech Consulting & Strategy",
+        "description": "Strategic advisory based on data analysis to optimize your technology investment and accelerate digital transformation.",
+        "features": ["Audits", "Roadmaps", "Due Diligence"],
+        "time": "2-4 weeks",
+        "success": "100%"
+      }
+    ],
+    "ctaPrefix": "Can't find what you need?",
+    "cta": "Let's talk about your project"
+  },
+  "metrics": {
+    "h2_line1": "Results that back up",
+    "h2_line2": "our experience",
+    "projects": [
+      {
+        "title": "Joyeria italiana",
+        "description": "Italian jewelry store digitized its catalog to reach more customers nationwide",
+        "benefits": [
+          "Greater online visibility",
+          "Nationwide customer increase",
+          "24/7 digital catalog access",
+          "Better product presentation"
+        ]
+      },
+      {
+        "title": "This website",
+        "description": "We developed our website in a simple, easy-to-understand way for our clients",
+        "benefits": [
+          "Professional company image",
+          "Better client communication",
+          "Clear explanation of services",
+          "Greater brand trust"
+        ]
+      },
+      {
+        "title": "DashGestion",
+        "description": "Manage your sales and inventory in one place",
+        "benefits": [
+          "Centralized inventory control",
+          "Automatic sales recording",
+          "Reduced manual errors",
+          "Reports for decision making"
+        ]
+      },
+      {
+        "title": "FerreMag",
+        "description": "Digitized hardware store with an intuitive interface and modern design",
+        "benefits": [
+          "Digital product catalog",
+          "Greater client reach",
+          "Better shopping experience",
+          "Sales process optimization"
+        ]
+      },
+      {
+        "title": "Fraktur",
+        "description": "Mobile app connecting doctors with patients securely and efficiently",
+        "benefits": [
+          "Direct doctor-patient connection",
+          "Greater medical service accessibility",
+          "Secure information management",
+          "Faster medical care"
+        ]
+      }
+    ],
+    "modal": {
+      "improvements": "Improvements achieved",
+      "private": "This project is private",
+      "visit": "Visit project",
+      "close": "Close"
+    }
+  },
+  "contact": {
+    "h2": "Tell us your idea",
+    "description": "First free, no-obligation consultation",
+    "location": "Santa Marta, Colombia",
+    "trust": [
+      {
+        "title": "Response within 24h",
+        "subtitle": "We communicate fast"
+      },
+      {
+        "title": "100% Confidential",
+        "subtitle": "Data protected"
+      },
+      {
+        "title": "No commitment",
+        "subtitle": "Free consultation"
+      }
+    ]
+  },
+  "contactForm": {
+    "labels": {
+      "fullName": "Full name",
+      "company": "Company",
+      "email": "Email",
+      "service": "Service of interest",
+      "message": "Message",
+      "privacy": "I accept the <link>privacy policy</link>"
+    },
+    "placeholders": {
+      "fullName": "John Doe",
+      "company": "My Company Inc.",
+      "email": "john@company.com",
+      "service": "Select a service",
+      "message": "Tell us about your project..."
+    },
+    "services": {
+      "mobile": "Mobile App Development",
+      "custom": "Custom Digital Solutions",
+      "automation": "Process Automation (RPA)",
+      "consulting": "Tech Consulting & Strategy"
+    },
+    "validation": {
+      "nameMin": "Name must be at least 2 characters",
+      "emailInvalid": "Invalid email",
+      "serviceRequired": "Please select a service",
+      "messageMin": "Message must be at least 10 characters",
+      "privacyRequired": "You must accept the privacy policy"
+    },
+    "success": "Thank you! Your request has been sent successfully. You will receive a response shortly.",
+    "error": "There was an error submitting the form. Please try again.",
+    "submit": "Send request",
+    "submitting": "Sending..."
+  },
+  "footer": {
+    "companyName": "Nexus Digital",
+    "tagline": "Technology solutions for companies seeking efficiency, security, and sustainable growth.",
+    "empresa": "Company",
+    "servicios": "Services",
+    "contacto": "Contact",
+    "companyLinks": [
+      { "label": "Home", "id": "inicio" },
+      { "label": "Services", "id": "servicios" },
+      { "label": "Success Stories", "id": "proyectos" },
+      { "label": "About Us", "id": "sobre-nosotros" },
+      { "label": "Contact", "id": "contacto" }
+    ],
+    "serviceLinks": [
+      "Mobile App Development",
+      "Enterprise Systems",
+      "RPA Automation",
+      "Tech Consulting",
+      "Cloud & DevOps",
+      "Cybersecurity"
+    ],
+    "contactInfo": {
+      "email": "contacto@nexusdigital.com",
+      "phone": "+57 300 123 4567",
+      "location": "Cúcuta, Colombia",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "locationLabel": "Location"
+    }
+  },
+  "about": {
+    "badge": "Our Essence",
+    "h1_line1": "Colombian Startup with a",
+    "h1_line2": "Latin American heart",
+    "description": "At Solutia, we help small businesses break down the barriers between their physical world and the digital audience. We know that making the leap to the online environment can feel overwhelming, which is why we create clear, accessible software solutions tailored to each entrepreneur's reality. It's not just about technology — it's about opening doors, connecting with new people, and growing what they've worked so hard to build.",
+    "cards": [
+      {
+        "title": "We connect businesses",
+        "description": "From the physical to the digital world, hassle-free."
+      },
+      {
+        "title": "Passion for growth",
+        "description": "Seeing businesses flourish drives us."
+      },
+      {
+        "title": "Accessible technology",
+        "description": "Clear, simple, and secure software."
+      }
+    ]
+  },
+  "projects": {
+    "badge": "Success Stories",
+    "h2_line1": "Projects that deliver",
+    "h2_line2": "measurable results",
+    "description": "Technology solutions implemented at leading companies across various sectors",
+    "industriesTitle": "Industries served",
+    "cta": "Explore More Success Stories",
+    "ctaPrompt": "Have a project in mind?",
+    "ctaLink": "Let's talk",
+    "viewMore": "View full case"
+  },
+  "projectCard": {
+    "technologies": "Technologies:"
+  },
+  "serviceCard": {
+    "discoverMore": "Learn more"
+  },
+  "langSwitcher": {
+    "es": "ES",
+    "en": "EN",
+    "label": "Language"
+  }
+}

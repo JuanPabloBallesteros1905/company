@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server"
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
@@ -8,7 +9,9 @@ interface ServiceCardProps {
   link: string
 }
 
-export function ServiceCard({ title, description, link }: ServiceCardProps) {
+export async function ServiceCard({ title, description, link }: ServiceCardProps) {
+  const t = await getTranslations("serviceCard")
+
   return (
     <Card className="group transition-all hover:shadow-lg hover:shadow-emerald-500/10">
       <CardHeader>
@@ -18,7 +21,7 @@ export function ServiceCard({ title, description, link }: ServiceCardProps) {
           href={link}
           className="inline-flex items-center pt-2 text-sm font-medium text-emerald-600 transition-colors group-hover:text-emerald-700"
         >
-          Descubrir más
+          {t("discoverMore")}
           <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Link>
       </CardHeader>
