@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "homeTitle": "Nexus Digital Solutions | IT Solutions & Development",
+    "homeTitle": "SolutiaCorp Digital Solutions | IT Solutions & Development",
     "homeDescription": "We develop mobile apps, automations, and custom systems that guarantee security, efficiency, and a real competitive advantage.",
-    "aboutTitle": "About Us | Nexus Digital Solutions",
-    "aboutDescription": "Meet Nexus Digital, a Colombian startup with a Latin American heart driving digital transformation and custom software development in the region."
+    "aboutTitle": "About Us | SolutiaCorp Digital Solutions",
+    "aboutDescription": "Meet SolutiaCorp, a Colombian startup with a Latin American heart driving digital transformation and custom software development in the region."
   },
   "nav": {
     "inicio": "Home",
@@ -42,7 +42,11 @@
       "badge": "Operations",
       "description": "Automate repetitive tasks, reduce errors, and save hours of work every day.",
       "efficiency": "+45% Efficiency",
-      "items": ["Automatic Invoicing", "Inventory Control", "System Synchronization"],
+      "items": [
+        "Automatic Invoicing",
+        "Inventory Control",
+        "System Synchronization"
+      ],
       "optimization": "Active Optimization",
       "automationFooter": "Automation without manual errors"
     }
@@ -76,28 +80,44 @@
       {
         "title": "Mobile App Development",
         "description": "Native and cross-platform apps with scalable architecture, optimized for performance and exceptional user experience.",
-        "features": ["iOS & Android", "React Native", "Flutter"],
+        "features": [
+          "iOS & Android",
+          "React Native",
+          "Flutter"
+        ],
         "time": "8-12 weeks",
         "success": "98%"
       },
       {
         "title": "Custom Digital Solutions",
         "description": "Custom business systems that integrate with your existing infrastructure and scale according to your business needs.",
-        "features": ["Scalable", "Cloud-native", "API-first"],
+        "features": [
+          "Scalable",
+          "Cloud-native",
+          "API-first"
+        ],
         "time": "12-16 weeks",
         "success": "95%"
       },
       {
         "title": "Process Automation (RPA)",
         "description": "Intelligent workflow automation that reduces operational costs by up to 40% and eliminates manual errors.",
-        "features": ["RPA", "Workflows", "Integration"],
+        "features": [
+          "RPA",
+          "Workflows",
+          "Integration"
+        ],
         "time": "4-8 weeks",
         "success": "92%"
       },
       {
         "title": "Tech Consulting & Strategy",
         "description": "Strategic advisory based on data analysis to optimize your technology investment and accelerate digital transformation.",
-        "features": ["Audits", "Roadmaps", "Due Diligence"],
+        "features": [
+          "Audits",
+          "Roadmaps",
+          "Due Diligence"
+        ],
         "time": "2-4 weeks",
         "success": "100%"
       }
@@ -165,6 +185,16 @@
       "private": "This project is private",
       "visit": "Visit project",
       "close": "Close"
+    },
+    "reservedCard": {
+      "badge": "Coming soon",
+      "cardTitle": "Reserved for your project",
+      "cardLine": "Your project could be here",
+      "cardInfo": "This space is waiting for your idea. Let's work together to make it real",
+      "modalTitle": "Your project could be here",
+      "modalDescription": "This space is waiting for your idea. We'd love to work with you to make it real. Write to us and let's make it happen!",
+      "cta": "Let's talk about your project",
+      "close": "Close"
     }
   },
   "contact": {
@@ -221,17 +251,32 @@
     "submitting": "Sending..."
   },
   "footer": {
-    "companyName": "Nexus Digital",
+    "companyName": "SolutiaCorp",
     "tagline": "Technology solutions for companies seeking efficiency, security, and sustainable growth.",
     "empresa": "Company",
     "servicios": "Services",
     "contacto": "Contact",
     "companyLinks": [
-      { "label": "Home", "id": "inicio" },
-      { "label": "Services", "id": "servicios" },
-      { "label": "Success Stories", "id": "proyectos" },
-      { "label": "About Us", "id": "sobre-nosotros" },
-      { "label": "Contact", "id": "contacto" }
+      {
+        "label": "Home",
+        "id": "inicio"
+      },
+      {
+        "label": "Services",
+        "id": "servicios"
+      },
+      {
+        "label": "Success Stories",
+        "id": "proyectos"
+      },
+      {
+        "label": "About Us",
+        "id": "sobre-nosotros"
+      },
+      {
+        "label": "Contact",
+        "id": "contacto"
+      }
     ],
     "serviceLinks": [
       "Mobile App Development",
@@ -242,7 +287,7 @@
       "Cybersecurity"
     ],
     "contactInfo": {
-      "email": "contacto@nexusdigital.com",
+      "email": "contacto@solutiacorp.co",
       "phone": "+57 300 123 4567",
       "location": "Cúcuta, Colombia",
       "emailLabel": "Email",
@@ -254,7 +299,7 @@
     "badge": "Our Essence",
     "h1_line1": "Colombian Startup with a",
     "h1_line2": "Latin American heart",
-    "description": "At Solutia, we help small businesses break down the barriers between their physical world and the digital audience. We know that making the leap to the online environment can feel overwhelming, which is why we create clear, accessible software solutions tailored to each entrepreneur's reality. It's not just about technology — it's about opening doors, connecting with new people, and growing what they've worked so hard to build.",
+    "description": "At SolutiaCorp, we help small businesses break down the barriers between their physical world and the digital audience. We know that making the leap to the online environment can feel overwhelming, which is why we create clear, accessible software solutions tailored to each entrepreneur's reality. It's not just about technology — it's about opening doors, connecting with new people, and growing what they've worked so hard to build.",
     "cards": [
       {
         "title": "We connect businesses",

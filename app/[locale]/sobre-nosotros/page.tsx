@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server"
+import { Suspense } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Heart, Globe, Flame, Shield } from "lucide-react"
@@ -90,7 +91,9 @@ export default async function SobreNosotrosPage() {
           </section>
         </article>
       </main>
-      <ContactSection />
+      <Suspense fallback={<div className="py-24" />}>
+        <ContactSection />
+      </Suspense>
     </>
   )
 }

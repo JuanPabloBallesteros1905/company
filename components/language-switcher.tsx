@@ -12,7 +12,8 @@ export function LanguageSwitcher() {
   const switchTo = locale === "es" ? "en" : "es"
 
   const handleSwitch = () => {
-    router.replace(pathname, { locale: switchTo })
+    const hash = typeof window !== "undefined" ? window.location.hash.slice(1) : ""
+    router.replace({ pathname, hash }, { locale: switchTo, scroll: false })
   }
 
   return (

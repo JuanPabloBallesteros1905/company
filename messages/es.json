@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "homeTitle": "Nexus Digital Solutions | Soluciones IT & Desarrollo",
+    "homeTitle": "SolutiaCorp Digital Solutions | Soluciones IT & Desarrollo",
     "homeDescription": "Desarrollamos aplicaciones móviles, automatizaciones y sistemas a medida que garantizan seguridad, eficiencia y una ventaja competitiva real.",
-    "aboutTitle": "Sobre Nosotros | Nexus Digital Solutions",
-    "aboutDescription": "Conoce a Nexus Digital, una startup colombiana con corazón latinoamericano que impulsa la transformación digital y el desarrollo de software a medida en la región."
+    "aboutTitle": "Sobre Nosotros | SolutiaCorp Digital Solutions",
+    "aboutDescription": "Conoce a SolutiaCorp, una startup colombiana con corazón latinoamericano que impulsa la transformación digital y el desarrollo de software a medida en la región."
   },
   "nav": {
     "inicio": "Inicio",
@@ -165,6 +165,16 @@
       "private": "Este proyecto es de uso privado",
       "visit": "Visitar proyecto",
       "close": "Cerrar"
+    },
+    "reservedCard": {
+      "badge": "Próximamente",
+      "cardTitle": "Reservado para tu proyecto <heart/>",
+      "cardLine": "Tu proyecto podría estar aquí",
+      "cardInfo": "Este espacio está esperando tu idea. Trabajemos juntos para convertirla en algo real <heart/>",
+      "modalTitle": "Tu proyecto podría estar aquí",
+      "modalDescription": "Este espacio está esperando tu idea. Nos encantaría trabajar contigo para convertirla en algo real. ¡Escríbenos y hagámoslo posible!",
+      "cta": "Hablemos de tu proyecto",
+      "close": "Cerrar"
     }
   },
   "contact": {
@@ -221,7 +231,7 @@
     "submitting": "Enviando..."
   },
   "footer": {
-    "companyName": "Nexus Digital",
+    "companyName": "SolutiaCorp",
     "tagline": "Soluciones tecnológicas para empresas que buscan eficiencia, seguridad y crecimiento sostenible.",
     "empresa": "Empresa",
     "servicios": "Servicios",
@@ -242,7 +252,7 @@
       "Ciberseguridad"
     ],
     "contactInfo": {
-      "email": "contacto@nexusdigital.com",
+      "email": "contacto@solutiacorp.co",
       "phone": "+57 300 123 4567",
       "location": "Cúcuta, Colombia",
       "emailLabel": "Email",
@@ -254,7 +264,7 @@
     "badge": "Nuestra Esencia",
     "h1_line1": "Startup Colombiana con corazón",
     "h1_line2": "latinoamericano",
-    "description": "En Solutia, ayudamos a los pequeños negocios a romper las barreras entre su mundo físico y el público digital. Sabemos que dar el salto al entorno online puede sentirse abrumador, por eso creamos soluciones de software claras, accesibles y adaptadas a la realidad de cada emprendedor. No se trata solo de tecnología, se trata de abrir puertas, conectar con nuevas personas y hacer crecer lo que con tanto esfuerzo han construido.",
+    "description": "En SolutiaCorp, ayudamos a los pequeños negocios a romper las barreras entre su mundo físico y el público digital. Sabemos que dar el salto al entorno online puede sentirse abrumador, por eso creamos soluciones de software claras, accesibles y adaptadas a la realidad de cada emprendedor. No se trata solo de tecnología, se trata de abrir puertas, conectar con nuevas personas y hacer crecer lo que con tanto esfuerzo han construido.",
     "cards": [
       {
         "title": "Conectamos negocios",

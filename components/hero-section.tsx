@@ -85,7 +85,7 @@ const BusinessSolutionShowcase = () => {
               <h3 className="text-xl font-bold text-slate-900 tracking-tight">{t("card1.title")}</h3>
               <span className="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-md uppercase">{t("card1.badge")}</span>
             </div>
-            <p className="text-sm text-slate-500 leading-tight">{t("card1.description")}</p>
+            {/* <p className="text-sm text-slate-500 leading-tight">{t("card1.description")}</p> */}
           </header>
 
           <div className="relative h-[480px] rounded-3xl border border-slate-200 bg-white shadow-xl overflow-hidden transition-all duration-300 group-hover:border-blue-400 group-hover:shadow-blue-500/5">
@@ -128,7 +128,7 @@ const BusinessSolutionShowcase = () => {
               <h3 className="text-xl font-bold text-slate-900 tracking-tight">{t("card2.title")}</h3>
               <span className="text-[10px] font-bold bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-md uppercase">{t("card2.badge")}</span>
             </div>
-            <p className="text-sm text-slate-500 leading-tight">{t("card2.description")}</p>
+            {/* <p className="text-sm text-slate-500 leading-tight">{t("card2.description")}</p> */}
           </header>
 
           <div className="relative h-[480px] rounded-3xl bg-slate-950 shadow-2xl overflow-hidden border border-slate-800 transition-all duration-300 group-hover:shadow-blue-500/10">
@@ -170,7 +170,7 @@ const BusinessSolutionShowcase = () => {
               <h3 className="text-xl font-bold text-slate-900 tracking-tight">{t("card3.title")}</h3>
               <span className="text-[10px] font-bold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md uppercase">{t("card3.badge")}</span>
             </div>
-            <p className="text-sm text-slate-500 leading-tight lg:text-left text-right">{t("card3.description")}</p>
+            {/* <p className="text-sm text-slate-500 leading-tight lg:text-left text-right">{t("card3.description")}</p> */}
           </header>
 
           <div className="relative h-[480px] rounded-3xl border border-slate-200 bg-slate-50/50 shadow-xl overflow-hidden transition-all duration-300 group-hover:border-emerald-400 group-hover:shadow-emerald-500/5">

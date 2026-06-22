@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server"
+import { Suspense } from "react"
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
 import { MetricsSection } from "@/components/metrics-section"
@@ -21,8 +22,12 @@ export default async function HomePage() {
       <HeroSection />
       <MetricsSection />
       <ProblemSolutionSection />
-      <ServicesSection />
-      <ContactSection />
+      <Suspense fallback={<div className="py-24" />}>
+        <ServicesSection />
+      </Suspense>
+      <Suspense fallback={<div className="py-24" />}>
+        <ContactSection />
+      </Suspense>
     </main>
   )
 }
