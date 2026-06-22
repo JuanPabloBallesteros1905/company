@@ -4,17 +4,22 @@ import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
+import { usePathname, useRouter } from "next/navigation"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-
-
+  const pathname = usePathname()
+  const router = useRouter()
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setIsOpen(false)
+    setIsOpen(false)
+    if (pathname === "/") {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+      }
+    } else {
+      router.push(`/#${sectionId}`)
     }
   }
 
@@ -43,28 +48,36 @@ export function Navbar() {
         <div className="hidden items-center space-x-8 md:flex">
           <button
             onClick={() => scrollToSection("inicio")}
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           >
             Inicio
           </button>
           <button
             onClick={() => scrollToSection("servicios")}
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           >
             Servicios
           </button>
           <button
             onClick={() => scrollToSection("proyectos")}
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           >
             Proyectos
           </button>
           <button
             onClick={() => scrollToSection("contacto")}
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
           >
             Contacto
           </button>
+          <Link
+            href="/sobre-nosotros"
+            className={`text-sm font-medium transition-colors hover:text-foreground cursor-pointer ${
+              pathname === "/sobre-nosotros" ? "text-blue-600 font-semibold" : "text-muted-foreground"
+            }`}
+          >
+            Sobre nosotros
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -79,28 +92,37 @@ export function Navbar() {
           <div className="container mx-auto flex flex-col space-y-4 px-4 py-6">
             <button
               onClick={() => scrollToSection("inicio")}
-              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
             >
               Inicio
             </button>
             <button
               onClick={() => scrollToSection("servicios")}
-              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
             >
               Servicios
             </button>
             <button
               onClick={() => scrollToSection("proyectos")}
-              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
             >
               Proyectos
             </button>
             <button
               onClick={() => scrollToSection("contacto")}
-              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
             >
               Contacto
             </button>
+            <Link
+              href="/sobre-nosotros"
+              onClick={() => setIsOpen(false)}
+              className={`text-left text-sm font-medium transition-colors hover:text-foreground cursor-pointer ${
+                pathname === "/sobre-nosotros" ? "text-blue-600 font-semibold" : "text-muted-foreground"
+              }`}
+            >
+              Sobre nosotros
+            </Link>
           </div>
         </div>
       )}

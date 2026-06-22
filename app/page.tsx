@@ -12,10 +12,10 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <MetricsSection />
       <ProblemSolutionSection />
 
       <ServicesSection />
-      <MetricsSection />
       {/* <ProjectsSection /> */}
       <ContactSection />
       {/* <Footer /> */}

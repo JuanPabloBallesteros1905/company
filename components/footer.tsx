@@ -11,17 +11,27 @@ import {
   ArrowUp,
 } from "lucide-react"
 import Image from "next/image"
+import { usePathname, useRouter } from "next/navigation"
 
 export function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
-  
+  const pathname = usePathname()
+  const router = useRouter()
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    element?.scrollIntoView({ behavior: "smooth" })
+    if (sectionId === "sobre-nosotros") {
+      router.push("/sobre-nosotros")
+      return
+    }
+    if (pathname === "/") {
+      const element = document.getElementById(sectionId)
+      element?.scrollIntoView({ behavior: "smooth" })
+    } else {
+      router.push(`/#${sectionId}`)
+    }
   }
 
   return (
@@ -82,13 +92,13 @@ export function Footer() {
                 { label: "Inicio", id: "inicio" },
                 { label: "Servicios", id: "servicios" },
                 { label: "Casos de Éxito", id: "proyectos" },
-                { label: "Nosotros", id: "#" },
+                { label: "Nosotros", id: "sobre-nosotros" },
                 { label: "Contacto", id: "contacto" },
               ].map((link, idx) => (
                 <li key={idx}>
                   <button
                     onClick={() => scrollToSection(link.id)}
-                    className="flex text-sm text-slate-600 transition-colors hover:text-slate-900"
+                    className="flex text-sm text-slate-600 transition-colors hover:text-slate-900 cursor-pointer"
                   >
                     {link.label}
                   </button>
