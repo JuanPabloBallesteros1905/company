@@ -20,10 +20,12 @@ export default async function HomePage() {
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <ServicesSection />
       <MetricsSection />
+      
       <ProblemSolutionSection />
       <Suspense fallback={<div className="py-24" />}>
-        <ServicesSection />
+        
       </Suspense>
       <Suspense fallback={<div className="py-24" />}>
         <ContactSection />

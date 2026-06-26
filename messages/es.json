@@ -42,7 +42,11 @@
       "badge": "Operaciones",
       "description": "Automatiza tareas repetitivas, reduce errores y ahorra horas de trabajo cada día.",
       "efficiency": "+45% Eficiencia",
-      "items": ["Facturación Automática", "Control de Inventario", "Sincronización de sistemas"],
+      "items": [
+        "Facturación Automática",
+        "Control de Inventario",
+        "Sincronización de sistemas"
+      ],
       "optimization": "Optimización Activa",
       "automationFooter": "Automatización sin errores manuales"
     }
@@ -68,42 +72,105 @@
     "cta": "Agendar llamada gratuita"
   },
   "services": {
-    "badge": "Servicios Especializados",
-    "h2_line1": "Soluciones tecnológicas",
-    "h2_line2": "para cada desafío",
-    "description": "Servicios integrales diseñados para impulsar la eficiencia operativa y el crecimiento sostenible de su organización",
-    "items": [
+    "badge": "Soluciones por Negocio",
+    "question": "¿De qué es tu negocio?",
+    "subtitle": "Selecciona tu tipo de negocio y te mostramos exactamente qué podemos hacer por ti",
+    "solutionsLabel": "Lo que hacemos por ti",
+    "ctaCard": "Quiero esto para mi negocio",
+    "businesses": [
       {
-        "title": "Desarrollo de Aplicaciones Móviles",
-        "description": "Aplicaciones nativas y multiplataforma con arquitectura escalable, optimizadas para rendimiento y experiencia de usuario excepcional.",
-        "features": ["iOS & Android", "React Native", "Flutter"],
-        "time": "8-12 semanas",
-        "success": "98%"
+        "id": "cafeteria",
+        "name": "Cafetería / Restaurante",
+        "icon": "coffee",
+        "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Digitaliza tu atención y aumenta tus pedidos",
+        "solutions": [
+          "Menú digital con QR para cada mesa",
+          "Sistema de pedidos online y domicilios",
+          "App de fidelización y puntos para clientes",
+          "Gestión de inventario y cocina en tiempo real",
+          "Redes sociales y publicidad automatizada",
+          "Reportes de ventas y productos más pedidos"
+        ]
       },
       {
-        "title": "Soluciones Digitales a Medida",
-        "description": "Sistemas empresariales personalizados que se integran con su infraestructura existente y escalan según sus necesidades de negocio.",
-        "features": ["Escalable", "Cloud-native", "API-first"],
-        "time": "12-16 semanas",
-        "success": "95%"
+        "id": "tienda-ropa",
+        "name": "Tienda de Ropa",
+        "icon": "shirt",
+        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Vende más allá de tu local, las 24 horas",
+        "solutions": [
+          "Tienda online con catálogo y pasarela de pagos",
+          "Integración con Instagram y WhatsApp para ventas",
+          "Control de inventario y tallas en tiempo real",
+          "Sistema de descuentos y temporadas automáticas",
+          "Gestión de domicilios y seguimiento de pedidos",
+          "Análisis de productos más vendidos"
+        ]
       },
       {
-        "title": "Automatización de Procesos (RPA)",
-        "description": "Automatización inteligente de flujos de trabajo que reduce costos operativos hasta un 40% y elimina errores manuales.",
-        "features": ["RPA", "Workflows", "Integración"],
-        "time": "4-8 semanas",
-        "success": "92%"
+        "id": "ferreteria",
+        "name": "Ferretería",
+        "icon": "wrench",
+        "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Organiza tu inventario y vende más rápido",
+        "solutions": [
+          "Sistema de inventario con códigos de barra",
+          "Cotizaciones y facturas electrónicas automáticas",
+          "Catálogo digital consultable por clientes",
+          "Control de proveedores y órdenes de compra",
+          "Punto de venta (POS) rápido y eficiente",
+          "Alertas de stock mínimo automáticas"
+        ]
       },
       {
-        "title": "Consultoría & Estrategia Tech",
-        "description": "Asesoramiento estratégico basado en análisis de datos para optimizar su inversión tecnológica y acelerar la transformación digital.",
-        "features": ["Auditorías", "Roadmaps", "Due Diligence"],
-        "time": "2-4 semanas",
-        "success": "100%"
+        "id": "salon-belleza",
+        "name": "Salón de Belleza",
+        "icon": "sparkles",
+        "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Llena tu agenda y reduce las citas perdidas",
+        "solutions": [
+          "Sistema de citas online 24/7 sin llamadas",
+          "Recordatorios automáticos por WhatsApp",
+          "Perfil digital con portafolio de trabajos",
+          "Gestión de clientes y historial de servicios",
+          "Programa de fidelización y referidos",
+          "Reportes de ingresos por estilista y servicio"
+        ]
+      },
+      {
+        "id": "clinica",
+        "name": "Clínica / Consultorio",
+        "icon": "stethoscope",
+        "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Agiliza la atención y cuida a tus pacientes",
+        "solutions": [
+          "Agendamiento de citas online y recordatorios",
+          "Historia clínica digital y segura",
+          "App para pacientes con seguimiento de tratamientos",
+          "Facturación y gestión de pagos simplificada",
+          "Portal de resultados y comunicación médico-paciente",
+          "Reportes y estadísticas de atención"
+        ]
+      },
+      {
+        "id": "otro",
+        "name": "Otro negocio",
+        "icon": "rocket",
+        "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Cuéntanos tu idea y la hacemos realidad",
+        "solutions": [
+          "Sitio web profesional a medida",
+          "Sistema de gestión personalizado",
+          "Automatización de procesos repetitivos",
+          "Aplicación móvil para tu negocio",
+          "Integración con herramientas que ya usas",
+          "Consultoría tecnológica sin costo"
+        ]
       }
     ],
-    "ctaPrefix": "¿No encuentras lo que necesitas?",
-    "cta": "Hablemos de su proyecto"
+    "ctaPrefix": "¿No ves tu negocio?",
+    "cta": "Cuéntanos tu idea"
   },
   "metrics": {
     "h2_line1": "Resultados que respaldan",
@@ -237,11 +304,26 @@
     "servicios": "Servicios",
     "contacto": "Contacto",
     "companyLinks": [
-      { "label": "Inicio", "id": "inicio" },
-      { "label": "Servicios", "id": "servicios" },
-      { "label": "Casos de Éxito", "id": "proyectos" },
-      { "label": "Nosotros", "id": "sobre-nosotros" },
-      { "label": "Contacto", "id": "contacto" }
+      {
+        "label": "Inicio",
+        "id": "inicio"
+      },
+      {
+        "label": "Servicios",
+        "id": "servicios"
+      },
+      {
+        "label": "Casos de Éxito",
+        "id": "proyectos"
+      },
+      {
+        "label": "Nosotros",
+        "id": "sobre-nosotros"
+      },
+      {
+        "label": "Contacto",
+        "id": "contacto"
+      }
     ],
     "serviceLinks": [
       "Desarrollo de Apps Móviles",

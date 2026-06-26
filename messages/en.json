@@ -72,58 +72,105 @@
     "cta": "Schedule a free call"
   },
   "services": {
-    "badge": "Specialized Services",
-    "h2_line1": "Technology solutions",
-    "h2_line2": "for every challenge",
-    "description": "Comprehensive services designed to boost operational efficiency and sustainable growth for your organization",
-    "items": [
+    "badge": "Solutions by Business",
+    "question": "What kind of business do you have?",
+    "subtitle": "Select your business type and we’ll show you exactly what we can do for you",
+    "solutionsLabel": "What we do for you",
+    "ctaCard": "I want this for my business",
+    "businesses": [
       {
-        "title": "Mobile App Development",
-        "description": "Native and cross-platform apps with scalable architecture, optimized for performance and exceptional user experience.",
-        "features": [
-          "iOS & Android",
-          "React Native",
-          "Flutter"
-        ],
-        "time": "8-12 weeks",
-        "success": "98%"
+        "id": "cafeteria",
+        "name": "Café / Restaurant",
+        "icon": "coffee",
+        "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Digitize your service and boost your orders",
+        "solutions": [
+          "Digital QR menu for every table",
+          "Online ordering and delivery system",
+          "Customer loyalty app with points",
+          "Real-time inventory and kitchen management",
+          "Social media and automated advertising",
+          "Sales reports and top-selling items"
+        ]
       },
       {
-        "title": "Custom Digital Solutions",
-        "description": "Custom business systems that integrate with your existing infrastructure and scale according to your business needs.",
-        "features": [
-          "Scalable",
-          "Cloud-native",
-          "API-first"
-        ],
-        "time": "12-16 weeks",
-        "success": "95%"
+        "id": "tienda-ropa",
+        "name": "Clothing Store",
+        "icon": "shirt",
+        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Sell beyond your store, 24 hours a day",
+        "solutions": [
+          "Online store with catalog and payment gateway",
+          "Instagram and WhatsApp sales integration",
+          "Real-time inventory and size tracking",
+          "Automatic discount and seasonal promotions",
+          "Delivery management and order tracking",
+          "Best-selling product analytics"
+        ]
       },
       {
-        "title": "Process Automation (RPA)",
-        "description": "Intelligent workflow automation that reduces operational costs by up to 40% and eliminates manual errors.",
-        "features": [
-          "RPA",
-          "Workflows",
-          "Integration"
-        ],
-        "time": "4-8 weeks",
-        "success": "92%"
+        "id": "ferreteria",
+        "name": "Hardware Store",
+        "icon": "wrench",
+        "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Organize your inventory and sell faster",
+        "solutions": [
+          "Barcode-based inventory system",
+          "Automatic electronic quotes and invoices",
+          "Customer-facing digital catalog",
+          "Supplier and purchase order management",
+          "Fast and efficient Point of Sale (POS)",
+          "Automatic low-stock alerts"
+        ]
       },
       {
-        "title": "Tech Consulting & Strategy",
-        "description": "Strategic advisory based on data analysis to optimize your technology investment and accelerate digital transformation.",
-        "features": [
-          "Audits",
-          "Roadmaps",
-          "Due Diligence"
-        ],
-        "time": "2-4 weeks",
-        "success": "100%"
+        "id": "salon-belleza",
+        "name": "Beauty Salon",
+        "icon": "sparkles",
+        "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Fill your schedule and reduce no-shows",
+        "solutions": [
+          "24/7 online booking without calls",
+          "Automatic WhatsApp appointment reminders",
+          "Digital profile with portfolio",
+          "Client management and service history",
+          "Loyalty and referral program",
+          "Revenue reports by stylist and service"
+        ]
+      },
+      {
+        "id": "clinica",
+        "name": "Clinic / Office",
+        "icon": "stethoscope",
+        "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Streamline care and look after your patients",
+        "solutions": [
+          "Online appointment scheduling and reminders",
+          "Secure digital medical records",
+          "Patient app with treatment tracking",
+          "Simplified billing and payment management",
+          "Results portal and doctor-patient communication",
+          "Attendance reports and statistics"
+        ]
+      },
+      {
+        "id": "otro",
+        "name": "Other business",
+        "icon": "rocket",
+        "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop&auto=format",
+        "tagline": "Tell us your idea and we’ll make it happen",
+        "solutions": [
+          "Custom professional website",
+          "Tailored management system",
+          "Automation of repetitive processes",
+          "Mobile app for your business",
+          "Integration with tools you already use",
+          "Free tech consulting"
+        ]
       }
     ],
-    "ctaPrefix": "Can't find what you need?",
-    "cta": "Let's talk about your project"
+    "ctaPrefix": "Don’t see your business?",
+    "cta": "Tell us your idea"
   },
   "metrics": {
     "h2_line1": "Results that back up",
