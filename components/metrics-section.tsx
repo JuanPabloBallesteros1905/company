@@ -1,17 +1,27 @@
-'use client'
+"use client"
 
-import { useState } from "react"
 import Image from "next/image"
-import { useTranslations, useMessages } from "next-intl"
+import { useTranslations } from "next-intl"
+import { ArrowUpRight, Check, Sparkles } from "lucide-react"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { track } from "@/lib/analytics"
+import { siteConfig } from "@/lib/site"
 
-interface CardProps {
+interface Project {
+  id: number
   title: string
   description: string
   image: string
   url?: string
-  fullDescription?: string
   privado: boolean
   beneficios: string[]
+  contain?: boolean
 }
 
 export function CourseCard({
@@ -21,300 +31,242 @@ export function CourseCard({
   description,
   image,
   url,
-  fullDescription,
-}: CardProps) {
+  contain = false,
+}: Omit<Project, "id">) {
   const t = useTranslations("metrics")
-  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <>
-      <article
-        onClick={() => setIsOpen(true)}
-        className="group bg-white border border-gray-100 rounded-xl overflow-hidden cursor-pointer transition-colors duration-150 hover:border-gray-300"
-      >
-        <div className="w-full aspect-[16/10] overflow-hidden bg-gray-50 relative">
+    <Dialog>
+      <DialogTrigger asChild>
+        <button
+          type="button"
+          onClick={() => track("case_view", { project: title })}
+          className="group overflow-hidden rounded-xl border border-slate-200 bg-white text-left transition-colors duration-150 hover:border-slate-300"
+        >
+          <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-50">
+            <Image
+              src={image}
+              alt={`Proyecto ${title}`}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className={`${contain ? "object-contain p-4" : "object-cover"} transition-transform duration-300 group-hover:scale-[1.03]`}
+            />
+          </div>
+
+          <div className="px-4 pb-4 pt-3">
+            <span className="mb-2 inline-block rounded-full bg-blue-50 px-2.5 py-0.5 text-[11px] font-medium text-blue-700">
+              {title}
+            </span>
+
+            <p className="mb-1.5 line-clamp-1 text-sm font-medium leading-snug text-slate-800">
+              {description}
+            </p>
+
+            <div className="mt-3 flex items-center justify-between">
+              <div className="flex flex-wrap gap-1">
+                {beneficios.slice(0, 2).map((beneficio) => (
+                  <span
+                    key={beneficio}
+                    className="rounded-full bg-teal-50 px-2 py-0.5 text-[11px] text-teal-700"
+                  >
+                    {beneficio}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors duration-150 group-hover:border-transparent group-hover:bg-blue-50 group-hover:text-blue-600">
+                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+        </button>
+      </DialogTrigger>
+
+      <DialogContent className="max-h-[90vh] max-w-sm overflow-y-auto p-0">
+        <div className="relative aspect-video w-full bg-slate-50">
           <Image
             src={image}
-            alt={title}
+            alt={`Proyecto ${title}`}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+            sizes="384px"
+            className={contain ? "object-contain p-4" : "object-cover"}
           />
         </div>
 
-        <div className="px-4 pt-3 pb-4">
-          <span className="inline-block text-[11px] font-medium text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full mb-2">
+        <div className="p-5">
+          <span className="mb-3 inline-block rounded-full bg-blue-50 px-2.5 py-0.5 text-[11px] font-medium text-blue-700">
             {title}
           </span>
 
-          <p className="text-sm font-medium text-gray-800 mb-1.5 leading-snug line-clamp-1">
+          <DialogTitle className="mb-2 text-sm font-semibold leading-snug text-slate-900">
             {description}
-          </p>
+          </DialogTitle>
+          <DialogDescription className="sr-only">{description}</DialogDescription>
 
-          <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 mb-3">
-            {fullDescription || description}
-          </p>
-
-          <div className="flex items-center justify-between">
-            <div className="flex flex-wrap gap-1">
-              {beneficios.slice(0, 2).map((b, i) => (
-                <span
-                  key={i}
-                  className="text-[11px] text-teal-700 bg-teal-50 px-2 py-0.5 rounded-full"
-                >
-                  {b}
-                </span>
-              ))}
-            </div>
-
-            <div className="w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:bg-blue-50 group-hover:border-transparent group-hover:text-blue-600 transition-colors duration-150 flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
-          onClick={() => setIsOpen(false)}
-        >
-          <div
-            className="bg-white rounded-xl border border-gray-100 w-full max-w-sm overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative w-full aspect-video bg-gray-50">
-              <Image
-                src={image}
-                alt={title}
-                fill
-                className="object-cover"
-              />
-              <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            <div className="p-5">
-              <span className="inline-block text-[11px] font-medium text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full mb-3">
-                {title}
-              </span>
-
-              <p className="text-sm font-medium text-gray-800 mb-2 leading-snug">
-                {description}
+          {beneficios.length > 0 && (
+            <div className="mb-5 mt-4">
+              <p className="mb-2 text-[10px] font-medium uppercase tracking-widest text-slate-400">
+                {t("modal.improvements")}
               </p>
-
-              <p className="text-xs text-gray-500 leading-relaxed mb-4">
-                {fullDescription || description}
-              </p>
-
-              {beneficios.length > 0 && (
-                <div className="mb-5">
-                  <p className="text-[10px] font-medium text-gray-400 uppercase tracking-widest mb-2">
-                    {t("modal.improvements")}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {beneficios.map((b, i) => (
-                      <span
-                        key={i}
-                        className="flex items-center gap-1 text-xs text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {b}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <div className="flex gap-2">
-                {privado ? (
-                  <div className="flex-1 bg-gray-100 text-gray-400 text-center text-sm py-2 rounded-lg">
-                    {t("modal.private")}
-                  </div>
-                ) : (
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center text-sm font-medium py-2 rounded-lg transition duration-150"
+              <div className="flex flex-wrap gap-1.5">
+                {beneficios.map((beneficio) => (
+                  <span
+                    key={beneficio}
+                    className="flex items-center gap-1 rounded-full bg-teal-50 px-2.5 py-1 text-xs text-teal-700"
                   >
-                    {t("modal.visit")}
-                  </a>
-                )}
-
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="px-4 py-2 border border-gray-200 hover:bg-gray-50 text-gray-500 text-sm rounded-lg transition duration-150"
-                >
-                  {t("modal.close")}
-                </button>
+                    <Check className="h-3 w-3" aria-hidden="true" />
+                    {beneficio}
+                  </span>
+                ))}
               </div>
             </div>
+          )}
+
+          <div className="flex gap-2">
+            {privado ? (
+              <div className="flex-1 rounded-lg bg-slate-100 py-2 text-center text-sm text-slate-400">
+                {t("modal.private")}
+              </div>
+            ) : (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track("outbound_click", { project: title })}
+                className="flex-1 rounded-lg bg-blue-600 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-blue-700"
+              >
+                {t("modal.visit")}
+              </a>
+            )}
           </div>
         </div>
-      )}
-    </>
+      </DialogContent>
+    </Dialog>
   )
 }
-
-
 
 export function CardReservada() {
   const t = useTranslations("metrics")
-  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <>
-      <article
-        onClick={() => setIsOpen(true)}
-        className="bg-white group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-200 cursor-pointer"
-      >
-        <div className="relative w-full h-80 md:h-64 lg:h-44 overflow-hidden bg-gray-50 flex flex-col items-center justify-center gap-2">
-          <span className="absolute w-16 h-16 rounded-full border-2 border-blue-400 opacity-20 animate-ping" />
-          <span className="absolute w-16 h-16 rounded-full border-2 border-blue-400 opacity-10 animate-ping [animation-delay:0.8s]" />
-
-          <div className="relative z-10 w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-            </svg>
+    <Dialog>
+      <DialogTrigger asChild>
+        <button
+          type="button"
+          className="group relative overflow-hidden rounded-xl border border-dashed border-slate-300 bg-white text-left transition-colors hover:border-blue-300"
+        >
+          <div className="relative flex aspect-[16/10] w-full flex-col items-center justify-center gap-2 overflow-hidden bg-slate-50">
+            <span className="absolute h-16 w-16 rounded-full border-2 border-blue-400 opacity-20 motion-safe:animate-ping" aria-hidden="true" />
+            <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-blue-50">
+              <Sparkles className="h-7 w-7 text-blue-600" aria-hidden="true" />
+            </div>
+            <p className="relative z-10 text-xs tracking-wide text-slate-400">
+              {t("reservedCard.cardLine")}
+            </p>
           </div>
 
-          <p className="relative z-10 text-xs text-gray-400 tracking-wide">{t("reservedCard.cardLine")}</p>
-        </div>
-
-        <div className="px-3 h-60 py-4">
-          <h3 className="text-sm text-gray-500 pb-2">
-            <span className="bg-blue-50 text-blue-700 py-1 px-2 rounded-lg text-xs font-medium">
+          <div className="px-4 pb-5 pt-4">
+            <span className="inline-block rounded-lg bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
               {t("reservedCard.badge")}
             </span>
-          </h3>
+            <p className="pt-3 text-base font-semibold text-slate-700">
+              {t.rich("reservedCard.cardTitle", {
+                heart: () => <span className="text-red-400">♥</span>,
+              })}
+            </p>
+            <p className="pt-1 text-sm text-slate-500">
+              {t.rich("reservedCard.cardInfo", {
+                heart: () => <span className="text-red-400">♥</span>,
+              })}
+            </p>
+          </div>
+        </button>
+      </DialogTrigger>
 
-          <p className="pt-2 text-base font-semibold text-gray-400 group-hover:text-gray-700 transition duration-200">
+      <DialogContent className="max-w-lg p-0">
+        <div className="relative flex h-44 w-full flex-col items-center justify-center gap-3 bg-blue-50">
+          <span className="absolute h-20 w-20 rounded-full border-2 border-blue-400 opacity-20 motion-safe:animate-ping" aria-hidden="true" />
+          <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-white shadow">
+            <Sparkles className="h-8 w-8 text-blue-600" aria-hidden="true" />
+          </div>
+          <p className="relative z-10 text-sm text-blue-500">{t("reservedCard.modalTitle")}</p>
+        </div>
+
+        <div className="p-6">
+          <span className="rounded-lg bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700">
+            {t("reservedCard.badge")}
+          </span>
+
+          <DialogTitle className="mt-4 text-base font-semibold text-slate-800">
             {t.rich("reservedCard.cardTitle", {
               heart: () => <span className="text-red-400">♥</span>,
             })}
-          </p>
+          </DialogTitle>
+          <DialogDescription className="mt-2 text-sm leading-relaxed text-slate-500">
+            {t("reservedCard.modalDescription")}
+          </DialogDescription>
 
-          <p className="pt-1 text-sm text-gray-400">
-            {t.rich("reservedCard.cardInfo", {
-              heart: () => <span className="text-red-400">♥</span>,
-            })}
-          </p>
-        </div>
-      </article>
-
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-          onClick={() => setIsOpen(false)}
-        >
-          <div
-            className="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative w-full h-48 bg-blue-50 flex flex-col items-center justify-center gap-3">
-              <span className="absolute w-20 h-20 rounded-full border-2 border-blue-400 opacity-20 animate-ping" />
-              <div className="relative z-10 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-                </svg>
-              </div>
-              <p className="relative z-10 text-sm text-blue-400">{t("reservedCard.modalTitle")}</p>
-
-              <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-3 right-3 z-20 bg-white/80 hover:bg-white text-gray-700 rounded-full w-8 h-8 flex items-center justify-center shadow transition"
-              >
-                ✕
-              </button>
-            </div>
-
-            <div className="p-6">
-              <span className="bg-blue-50 text-blue-700 py-1 px-3 text-sm rounded-lg font-medium">
-                {t("reservedCard.badge")}
-              </span>
-
-              <p className="mt-4 text-gray-700 font-semibold text-base">
-                {t.rich("reservedCard.cardTitle", {
-                  heart: () => <span className="text-red-400">♥</span>,
-                })}
-              </p>
-
-              <p className="mt-2 text-gray-500 text-sm leading-relaxed">
-                {t("reservedCard.modalDescription")}
-              </p>
-
-              <div className="mt-6 flex gap-3">
-                <a
-                  href="mailto:contacto@solutiacorp.co"
-                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-lg font-semibold transition duration-200"
-                >
-                  {t("reservedCard.cta")}
-                </a>
-
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="px-4 py-2.5 border border-gray-200 hover:bg-gray-50 text-gray-600 rounded-lg transition duration-200"
-                >
-                  {t("reservedCard.close")}
-                </button>
-              </div>
-            </div>
+          <div className="mt-6 flex gap-3">
+            <a
+              href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Quiero cotizar mi proyecto")}`}
+              onClick={() => track("contact_click", { type: "email", location: "reserved_project" })}
+              className="flex-1 rounded-lg bg-blue-600 py-2.5 text-center font-semibold text-white transition-colors hover:bg-blue-700"
+            >
+              {t("reservedCard.cta")}
+            </a>
           </div>
         </div>
-      )}
-    </>
+      </DialogContent>
+    </Dialog>
   )
 }
 
-
-
 export function MetricsSection() {
   const t = useTranslations("metrics")
-  const messages = useMessages() as any
-  const translatedProjects = messages.metrics?.projects || []
+  const translatedProjects = t.raw("projects") as Array<{
+    title: string
+    description: string
+    benefits: string[]
+  }>
 
   const staticProjectsData = [
-    { id: 1, image: "/portada_web.png", privado: false, url: "https://joyeriaitaliana.com/" },
-    { id: 2, image: "/portada_solu.png", privado: false, url: "https://www.solutiacorp.co/" },
-    { id: 3, image: "/portal_gestion.png", privado: true, url: "/portada_web.png" },
-    { id: 4, image: "/ferre_mag.png", privado: true, url: "/portada_web.png" },
-    { id: 5, image: "/fraktur.png", privado: false, url: "https://play.google.com/store/apps/details?id=com.medical.fraktur.hn&hl=es_CO" },
+    { id: 1, image: "/proyecto-joyeria.webp", privado: false, url: "https://joyeriaitaliana.com/" },
+    { id: 2, image: "/proyecto-solutia.webp", privado: false, url: "https://www.solutiacorp.co/" },
+    { id: 3, image: "/proyecto-dashgestion.webp", privado: true },
+    { id: 4, image: "/proyecto-ferremag.webp", privado: true },
+    {
+      id: 5,
+      image: "/proyecto-fraktur.webp",
+      privado: false,
+      url: "https://play.google.com/store/apps/details?id=com.medical.fraktur.hn&hl=es_CO",
+      contain: true,
+    },
   ]
 
-  const projects = staticProjectsData.map((item, i) => ({
+  const projects = staticProjectsData.map((item, index) => ({
     ...item,
-    title: translatedProjects[i]?.title || "",
-    description: translatedProjects[i]?.description || "",
-    beneficios: translatedProjects[i]?.benefits || [],
+    title: translatedProjects[index]?.title ?? "",
+    description: translatedProjects[index]?.description ?? "",
+    beneficios: translatedProjects[index]?.benefits ?? [],
   }))
 
   return (
-    <section id="proyectos" className="relative overflow-hidden  bg-white py-20">
-      <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-sky-400/8 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-blue-400/6 rounded-full blur-3xl" />
+    <section id="proyectos" className="relative overflow-hidden bg-white py-20 scroll-mt-20">
+      <div className="pointer-events-none absolute left-1/4 top-0 h-[400px] w-[400px] rounded-full bg-sky-400/10 blur-3xl" aria-hidden="true" />
+      <div className="pointer-events-none absolute bottom-0 right-1/4 h-[350px] w-[350px] rounded-full bg-blue-400/10 blur-3xl" aria-hidden="true" />
 
       <div className="container relative mx-auto px-4">
-        <div className="mb-16 text-center max-w-2xl mx-auto">
-          <h2 className="mb-4 text-4xl font-bold tracking-tight lg:text-5xl text-slate-900">
-            {t("h2_line1")}
-            <span className="block text-blue-600  mt-2">{t("h2_line2")}</span>
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            {t("h2_line1")}{" "}
+            <span className="mt-2 block text-blue-600">{t("h2_line2")}</span>
           </h2>
         </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9 px-6">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-2 sm:grid-cols-2 lg:grid-cols-3">
           <CardReservada />
-          {projects.map((item) => (
-            <CourseCard {...item} key={item.id} />
+          {projects.map((project) => (
+            <CourseCard {...project} key={project.id} />
           ))}
         </div>
       </div>

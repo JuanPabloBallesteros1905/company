@@ -2,7 +2,7 @@
   "metadata": {
     "homeTitle": "SolutiaCorp Digital Solutions | IT Solutions & Development",
     "homeDescription": "We develop mobile apps, automations, and custom systems that guarantee security, efficiency, and a real competitive advantage.",
-    "aboutTitle": "About Us | SolutiaCorp Digital Solutions",
+    "aboutTitle": "About us",
     "aboutDescription": "Meet SolutiaCorp, a Colombian startup with a Latin American heart driving digital transformation and custom software development in the region."
   },
   "nav": {
@@ -11,7 +11,12 @@
     "proyectos": "Projects",
     "contacto": "Contact",
     "sobreNosotros": "About us",
-    "toggleMenu": "Toggle menu"
+    "toggleMenu": "Toggle menu",
+    "cta": "Let's talk",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchToSpanish": "Switch to Spanish",
+    "switchToEnglish": "Switch to English"
   },
   "hero": {
     "h1_line1": "Custom software development for businesses",
@@ -82,7 +87,7 @@
         "id": "cafeteria",
         "name": "Café / Restaurant",
         "icon": "coffee",
-        "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/cafeteria.webp",
         "tagline": "Digitize your service and boost your orders",
         "solutions": [
           "Digital QR menu for every table",
@@ -97,7 +102,7 @@
         "id": "tienda-ropa",
         "name": "Clothing Store",
         "icon": "shirt",
-        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/tienda-ropa.webp",
         "tagline": "Sell beyond your store, 24 hours a day",
         "solutions": [
           "Online store with catalog and payment gateway",
@@ -112,7 +117,7 @@
         "id": "ferreteria",
         "name": "Hardware Store",
         "icon": "wrench",
-        "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/ferreteria.webp",
         "tagline": "Organize your inventory and sell faster",
         "solutions": [
           "Barcode-based inventory system",
@@ -127,7 +132,7 @@
         "id": "salon-belleza",
         "name": "Beauty Salon",
         "icon": "sparkles",
-        "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/salon-belleza.webp",
         "tagline": "Fill your schedule and reduce no-shows",
         "solutions": [
           "24/7 online booking without calls",
@@ -142,7 +147,7 @@
         "id": "clinica",
         "name": "Clinic / Office",
         "icon": "stethoscope",
-        "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/clinica.webp",
         "tagline": "Streamline care and look after your patients",
         "solutions": [
           "Online appointment scheduling and reminders",
@@ -157,7 +162,7 @@
         "id": "otro",
         "name": "Other business",
         "icon": "rocket",
-        "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/otro.webp",
         "tagline": "Tell us your idea and we’ll make it happen",
         "solutions": [
           "Custom professional website",
@@ -170,7 +175,8 @@
       }
     ],
     "ctaPrefix": "Don’t see your business?",
-    "cta": "Tell us your idea"
+    "cta": "Tell us your idea",
+    "hint": "Select a card to see the solutions for your business"
   },
   "metrics": {
     "h2_line1": "Results that back up",
@@ -270,14 +276,17 @@
       "email": "Email",
       "service": "Service of interest",
       "message": "Message",
-      "privacy": "I accept the <link>privacy policy</link>"
+      "privacy": "I accept the <link>privacy policy</link>",
+      "phone": "Phone / WhatsApp",
+      "optional": "(optional)"
     },
     "placeholders": {
       "fullName": "John Doe",
       "company": "My Company Inc.",
       "email": "john@company.com",
       "service": "Select a service",
-      "message": "Tell us about your project..."
+      "message": "Tell us about your project...",
+      "phone": "e.g. +57 300 000 0000"
     },
     "services": {
       "mobile": "Mobile App Development",
@@ -334,13 +343,20 @@
       "Cybersecurity"
     ],
     "contactInfo": {
-      "email": "contacto@solutiacorp.co",
-      "phone": "+57 300 123 4567",
-      "location": "Cúcuta, Colombia",
+      "email": "jpballesterossosa@gmail.com",
+      "phone": "",
+      "location": "Santa Marta, Colombia",
       "emailLabel": "Email",
       "phoneLabel": "Phone",
       "locationLabel": "Location"
-    }
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy policy",
+      "cookies": "Cookie policy",
+      "terms": "Terms and conditions"
+    },
+    "rights": "All rights reserved."
   },
   "about": {
     "badge": "Our Essence",
@@ -383,5 +399,22 @@
     "es": "ES",
     "en": "EN",
     "label": "Language"
+  },
+  "thanks": {
+    "title": "Thanks for reaching out!",
+    "description": "We received your message. We will reply within 24 business hours to the email you provided.",
+    "back": "Back to home"
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has moved. Go back home to keep exploring.",
+    "cta": "Back to home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An error occurred while loading the page. Please try again.",
+    "retry": "Try again",
+    "home": "Back to home"
   }
 }

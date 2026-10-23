@@ -2,7 +2,7 @@
   "metadata": {
     "homeTitle": "SolutiaCorp Digital Solutions | Soluciones IT & Desarrollo",
     "homeDescription": "Desarrollamos aplicaciones móviles, automatizaciones y sistemas a medida que garantizan seguridad, eficiencia y una ventaja competitiva real.",
-    "aboutTitle": "Sobre Nosotros | SolutiaCorp Digital Solutions",
+    "aboutTitle": "Sobre nosotros",
     "aboutDescription": "Conoce a SolutiaCorp, una startup colombiana con corazón latinoamericano que impulsa la transformación digital y el desarrollo de software a medida en la región."
   },
   "nav": {
@@ -11,7 +11,12 @@
     "proyectos": "Proyectos",
     "contacto": "Contacto",
     "sobreNosotros": "Sobre nosotros",
-    "toggleMenu": "Toggle menu"
+    "toggleMenu": "Toggle menu",
+    "cta": "Hablemos",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "switchToSpanish": "Cambiar a español",
+    "switchToEnglish": "Cambiar a inglés"
   },
   "hero": {
     "h1_line1": "Desarrollo de software a medida para empresas",
@@ -82,7 +87,7 @@
         "id": "cafeteria",
         "name": "Cafetería / Restaurante",
         "icon": "coffee",
-        "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/cafeteria.webp",
         "tagline": "Digitaliza tu atención y aumenta tus pedidos",
         "solutions": [
           "Menú digital con QR para cada mesa",
@@ -97,7 +102,7 @@
         "id": "tienda-ropa",
         "name": "Tienda de Ropa",
         "icon": "shirt",
-        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/tienda-ropa.webp",
         "tagline": "Vende más allá de tu local, las 24 horas",
         "solutions": [
           "Tienda online con catálogo y pasarela de pagos",
@@ -112,7 +117,7 @@
         "id": "ferreteria",
         "name": "Ferretería",
         "icon": "wrench",
-        "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/ferreteria.webp",
         "tagline": "Organiza tu inventario y vende más rápido",
         "solutions": [
           "Sistema de inventario con códigos de barra",
@@ -127,7 +132,7 @@
         "id": "salon-belleza",
         "name": "Salón de Belleza",
         "icon": "sparkles",
-        "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/salon-belleza.webp",
         "tagline": "Llena tu agenda y reduce las citas perdidas",
         "solutions": [
           "Sistema de citas online 24/7 sin llamadas",
@@ -142,7 +147,7 @@
         "id": "clinica",
         "name": "Clínica / Consultorio",
         "icon": "stethoscope",
-        "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/clinica.webp",
         "tagline": "Agiliza la atención y cuida a tus pacientes",
         "solutions": [
           "Agendamiento de citas online y recordatorios",
@@ -157,7 +162,7 @@
         "id": "otro",
         "name": "Otro negocio",
         "icon": "rocket",
-        "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop&auto=format",
+        "image": "/servicios/otro.webp",
         "tagline": "Cuéntanos tu idea y la hacemos realidad",
         "solutions": [
           "Sitio web profesional a medida",
@@ -170,15 +175,16 @@
       }
     ],
     "ctaPrefix": "¿No ves tu negocio?",
-    "cta": "Cuéntanos tu idea"
+    "cta": "Cuéntanos tu idea",
+    "hint": "Selecciona una tarjeta para ver las soluciones para tu negocio"
   },
   "metrics": {
     "h2_line1": "Resultados que respaldan",
     "h2_line2": "nuestra experiencia",
     "projects": [
       {
-        "title": "Joyeria italiana",
-        "description": "Joyeria italiana digitalizó su catalogo para asi lograr mas clientes a nivel nacional",
+        "title": "Joyería Italiana",
+        "description": "Joyería Italiana digitalizó su catálogo para llegar a más clientes en todo el país.",
         "benefits": [
           "Mayor visibilidad en internet",
           "Incremento de clientes a nivel nacional",
@@ -187,8 +193,8 @@
         ]
       },
       {
-        "title": "Esta pagina",
-        "description": "Desarrollamos nuestra web de una manera sencilla de comprender para nuestros clientes",
+        "title": "Este sitio web",
+        "description": "Diseñamos nuestra propia web para explicar con claridad lo que hacemos y generar confianza.",
         "benefits": [
           "Imagen profesional para la empresa",
           "Mejor comunicación con clientes",
@@ -208,7 +214,7 @@
       },
       {
         "title": "FerreMag",
-        "description": "Tienda de ferreteria digitalizada, con una interfaz intuitiva y un diseño moderno",
+        "description": "Tienda de ferretería digitalizada, con una interfaz intuitiva y un diseño moderno.",
         "benefits": [
           "Catálogo digital de productos",
           "Mayor alcance de clientes",
@@ -218,7 +224,7 @@
       },
       {
         "title": "Fraktur",
-        "description": "Aplicacion movil que conecta médicos con pacientes de manera segura y eficiente",
+        "description": "Aplicación móvil que conecta médicos con pacientes de forma segura y eficiente.",
         "benefits": [
           "Conexión directa entre médicos y pacientes",
           "Mayor accesibilidad a servicios médicos",
@@ -245,7 +251,7 @@
     }
   },
   "contact": {
-    "h2": "Cuentanos tu idea",
+    "h2": "Cuéntanos tu idea",
     "description": "Primera consultoría gratuita y sin compromiso",
     "location": "Santa Marta, Colombia",
     "trust": [
@@ -270,14 +276,17 @@
       "email": "Email",
       "service": "Servicio de interés",
       "message": "Mensaje",
-      "privacy": "Acepto la <link>política de privacidad</link>"
+      "privacy": "Acepto la <link>política de privacidad</link>",
+      "phone": "Teléfono / WhatsApp",
+      "optional": "(opcional)"
     },
     "placeholders": {
       "fullName": "Juan Pérez",
       "company": "Mi Empresa S.A.",
       "email": "juan@empresa.com",
       "service": "Seleccione un servicio",
-      "message": "Cuéntenos sobre su proyecto..."
+      "message": "Cuéntenos sobre su proyecto...",
+      "phone": "Ej. +57 300 000 0000"
     },
     "services": {
       "mobile": "Desarrollo de Aplicaciones Móviles",
@@ -334,13 +343,20 @@
       "Ciberseguridad"
     ],
     "contactInfo": {
-      "email": "contacto@solutiacorp.co",
-      "phone": "+57 300 123 4567",
-      "location": "Cúcuta, Colombia",
+      "email": "jpballesterossosa@gmail.com",
+      "phone": "",
+      "location": "Santa Marta, Colombia",
       "emailLabel": "Email",
       "phoneLabel": "Teléfono",
       "locationLabel": "Ubicación"
-    }
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Política de privacidad",
+      "cookies": "Política de cookies",
+      "terms": "Términos y condiciones"
+    },
+    "rights": "Todos los derechos reservados."
   },
   "about": {
     "badge": "Nuestra Esencia",
@@ -383,5 +399,22 @@
     "es": "ES",
     "en": "EN",
     "label": "Idioma"
+  },
+  "thanks": {
+    "title": "¡Gracias por escribirnos!",
+    "description": "Recibimos tu mensaje. Te responderemos en menos de 24 horas hábiles al correo que nos dejaste.",
+    "back": "Volver al inicio"
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o cambió de lugar. Vuelve al inicio para seguir explorando.",
+    "cta": "Volver al inicio"
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "description": "Ocurrió un error al cargar la página. Por favor, intenta de nuevo.",
+    "retry": "Reintentar",
+    "home": "Volver al inicio"
   }
 }

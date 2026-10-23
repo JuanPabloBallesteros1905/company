@@ -1,132 +1,133 @@
 "use client"
 
-import { Link, usePathname, useRouter } from "@/i18n/routing"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Link, usePathname } from "@/i18n/routing"
+import { Menu, X, ArrowRight } from "lucide-react"
 import Image from "next/image"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { LanguageSwitcher } from "@/components/language-switcher"
+import { track } from "@/lib/analytics"
+
+const sections = ["servicios", "proyectos", "contacto"] as const
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
-  const router = useRouter()
+  const locale = useLocale()
   const t = useTranslations("nav")
 
-  const scrollToSection = (sectionId: string) => {
-    setIsOpen(false)
-    if (pathname === "/") {
-      const element = document.getElementById(sectionId)
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" })
-      }
-    } else {
-      router.push(`/#${sectionId}`)
+  useEffect(() => {
+    if (!isOpen) return
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false)
     }
-  }
+    document.addEventListener("keydown", onKeyDown)
+    return () => document.removeEventListener("keydown", onKeyDown)
+  }, [isOpen])
+
+  const sectionHref = (id: string) =>
+    pathname === "/" ? `#${id}` : `/${locale}#${id}`
 
   return (
-    <header className="sticky  top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/20">
-      <nav className="container mx-auto flex h-26 items-center justify-between px-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center mt-10 space-x-9">
-
-          {/* <span className="text-3xl font-semibold text-foreground">Solutia</span>
-
-
-           */}
-
-
-           <Image
-            src="/solu_logo.png"
-            alt="Logo"
-            width={702}
-            height={702}
-            className="h-60 w-90"
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-md">
+      <nav
+        aria-label={locale === "es" ? "Navegación principal" : "Main navigation"}
+        className="container mx-auto flex h-16 items-center justify-between gap-6 px-4 md:h-20"
+      >
+        <Link href="/" aria-label={`${t("inicio")} — SolutiaCorp`} className="flex shrink-0 items-center">
+          <Image
+            src="/logo-solutia.webp"
+            alt="SolutiaCorp"
+            width={454}
+            height={160}
+            priority
+            sizes="180px"
+            className="h-9 w-auto md:h-10"
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden items-center space-x-8 md:flex">
-          <button
-            onClick={() => scrollToSection("inicio")}
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
-          >
-            {t("inicio")}
-          </button>
-          <button
-            onClick={() => scrollToSection("servicios")}
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
-          >
-            {t("servicios")}
-          </button>
-          <button
-            onClick={() => scrollToSection("proyectos")}
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
-          >
-            {t("proyectos")}
-          </button>
-          <button
-            onClick={() => scrollToSection("contacto")}
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
-          >
-            {t("contacto")}
-          </button>
+        <div className="hidden items-center gap-7 md:flex">
+          {sections.map((id) => (
+            <a
+              key={id}
+              href={sectionHref(id)}
+              onClick={() => track("nav_click", { section: id })}
+              className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
+            >
+              {t(id)}
+            </a>
+          ))}
           <Link
             href="/sobre-nosotros"
-            className={`text-sm font-medium transition-colors hover:text-foreground cursor-pointer ${
-              pathname === "/sobre-nosotros" ? "text-blue-600 font-semibold" : "text-muted-foreground"
+            className={`text-sm font-medium transition-colors hover:text-slate-900 ${
+              pathname === "/sobre-nosotros" ? "font-semibold text-blue-700" : "text-slate-600"
             }`}
           >
             {t("sobreNosotros")}
           </Link>
+
           <LanguageSwitcher />
+
+          <a
+            href={sectionHref("contacto")}
+            onClick={() => track("cta_click", { location: "navbar" })}
+            className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
+          >
+            {t("cta")}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden" aria-label={t("toggleMenu")}>
+        <button
+          type="button"
+          onClick={() => setIsOpen((open) => !open)}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-700 transition-colors hover:bg-slate-100 md:hidden"
+          aria-label={isOpen ? t("closeMenu") : t("openMenu")}
+          aria-expanded={isOpen}
+          aria-controls="menu-movil"
+        >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
 
-      {/* Mobile Navigation */}
       {isOpen && (
-        <div className="border-t border-border/40 bg-background/95 backdrop-blur md:hidden">
-          <div className="container mx-auto flex flex-col space-y-4 px-4 py-6">
-            <button
-              onClick={() => scrollToSection("inicio")}
-              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
-            >
-              {t("inicio")}
-            </button>
-            <button
-              onClick={() => scrollToSection("servicios")}
-              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
-            >
-              {t("servicios")}
-            </button>
-            <button
-              onClick={() => scrollToSection("proyectos")}
-              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
-            >
-              {t("proyectos")}
-            </button>
-            <button
-              onClick={() => scrollToSection("contacto")}
-              className="text-left text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
-            >
-              {t("contacto")}
-            </button>
+        <div id="menu-movil" className="border-t border-slate-200 bg-white md:hidden">
+          <div className="container mx-auto flex flex-col gap-1 px-4 py-4">
+            {sections.map((id) => (
+              <a
+                key={id}
+                href={sectionHref(id)}
+                onClick={() => {
+                  setIsOpen(false)
+                  track("nav_click", { section: id, location: "mobile" })
+                }}
+                className="rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900"
+              >
+                {t(id)}
+              </a>
+            ))}
             <Link
               href="/sobre-nosotros"
               onClick={() => setIsOpen(false)}
-              className={`text-left text-sm font-medium transition-colors hover:text-foreground cursor-pointer ${
-                pathname === "/sobre-nosotros" ? "text-blue-600 font-semibold" : "text-muted-foreground"
-              }`}
+              className="rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900"
             >
               {t("sobreNosotros")}
             </Link>
-            <LanguageSwitcher />
+
+            <div className="mt-2 flex items-center justify-between gap-3 border-t border-slate-100 pt-4">
+              <LanguageSwitcher />
+              <a
+                href={sectionHref("contacto")}
+                onClick={() => {
+                  setIsOpen(false)
+                  track("cta_click", { location: "mobile_menu" })
+                }}
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white"
+              >
+                {t("cta")}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </div>
       )}

@@ -1,11 +1,21 @@
-version: "3.9"
-
 services:
   front:
     container_name: solutia-front
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://solutiacorp.co}
+        NEXT_PUBLIC_UMAMI_WEBSITE_ID: ${NEXT_PUBLIC_UMAMI_WEBSITE_ID:-d2cdc761-0100-4b1a-bd58-6ede33ff0367}
+        NEXT_PUBLIC_UMAMI_SRC: ${NEXT_PUBLIC_UMAMI_SRC:-https://cloud.umami.is/script.js}
+        NEXT_PUBLIC_UMAMI_DOMAINS: ${NEXT_PUBLIC_UMAMI_DOMAINS:-solutiacorp.co,www.solutiacorp.co}
+        NEXT_PUBLIC_WHATSAPP_NUMBER: ${NEXT_PUBLIC_WHATSAPP_NUMBER:-}
     ports:
       - "4000:4000"
     restart: always
+    environment:
+      - BREVO_API_KEY=${BREVO_API_KEY}
+      - BREVO_SENDER_EMAIL=${BREVO_SENDER_EMAIL:-jpballesterossosa@gmail.com}
+      - BREVO_SENDER_NAME=${BREVO_SENDER_NAME:-Solutia}
+      - CONTACT_TO_EMAIL=${CONTACT_TO_EMAIL:-jpballesterossosa@gmail.com}
+      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://solutiacorp.co}
