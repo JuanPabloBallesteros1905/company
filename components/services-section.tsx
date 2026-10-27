@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
-import { CheckCircle2, ArrowRight, ChevronRight, MousePointerClick } from "lucide-react"
+import { CheckCircle2, ArrowRight, ChevronDown, ChevronRight, ChevronUp, MousePointerClick } from "lucide-react"
 import { track } from "@/lib/analytics"
 
 type Business = {
@@ -19,6 +19,7 @@ export function ServicesSection() {
   const t = useTranslations("services")
   const businesses = t.raw("businesses") as Business[]
   const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [showAllSolutions, setShowAllSolutions] = useState(false)
 
   const selected = businesses.find((business) => business.id === selectedId) ?? null
 
@@ -65,6 +66,7 @@ export function ServicesSection() {
                 type="button"
                 onClick={() => {
                   setSelectedId(isActive ? null : business.id)
+                  setShowAllSolutions(false)
                   if (!isActive) {
                     track("service_view", { business: business.id })
                   }
@@ -98,6 +100,10 @@ export function ServicesSection() {
 
             if (!isActive) return [card]
 
+            const visibleSolutions = showAllSolutions
+              ? business.solutions
+              : business.solutions.slice(0, 3)
+
             const detail = (
               <div
                 key={`detail-${business.id}`}
@@ -113,22 +119,43 @@ export function ServicesSection() {
                     <p className="mb-5 text-sm font-semibold uppercase tracking-wider text-slate-500">
                       {t("solutionsLabel")}
                     </p>
-                    <ul className="mb-8 grid gap-3 sm:grid-cols-2">
-                      {business.solutions.map((solution) => (
+                    <ul className="mb-5 grid gap-3 sm:grid-cols-2">
+                      {visibleSolutions.map((solution) => (
                         <li key={solution} className="flex items-start gap-3">
                           <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-600" strokeWidth={2.5} aria-hidden="true" />
                           <span className="text-sm leading-snug text-slate-700">{solution}</span>
                         </li>
                       ))}
                     </ul>
-                    <a
-                      href="#contacto"
-                      onClick={() => track("cta_click", { location: "service_detail", business: business.id })}
-                      className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-200 hover:scale-[1.02] hover:bg-blue-700 active:scale-[0.98]"
-                    >
-                      {t("ctaCard")}
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </a>
+
+                    {business.solutions.length > 3 && (
+                      <button
+                        type="button"
+                        onClick={() => setShowAllSolutions((value) => !value)}
+                        aria-expanded={showAllSolutions}
+                        className="mb-8 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700"
+                      >
+                        {showAllSolutions
+                          ? t("showLess")
+                          : t("showAll", { count: business.solutions.length })}
+                        {showAllSolutions ? (
+                          <ChevronUp className="h-4 w-4" aria-hidden="true" />
+                        ) : (
+                          <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                        )}
+                      </button>
+                    )}
+
+                    <div className="flex">
+                      <a
+                        href="#contacto"
+                        onClick={() => track("cta_click", { location: "service_detail", business: business.id })}
+                        className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-200 hover:scale-[1.02] hover:bg-blue-700 active:scale-[0.98]"
+                      >
+                        {t("ctaCard")}
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

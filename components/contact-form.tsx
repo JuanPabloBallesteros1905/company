@@ -217,10 +217,12 @@ export function ContactForm() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
+                    <SelectItem value="web">{t("services.web")}</SelectItem>
                     <SelectItem value="mobile">{t("services.mobile")}</SelectItem>
-                    <SelectItem value="custom">{t("services.custom")}</SelectItem>
+                    <SelectItem value="systems">{t("services.systems")}</SelectItem>
                     <SelectItem value="automation">{t("services.automation")}</SelectItem>
                     <SelectItem value="consulting">{t("services.consulting")}</SelectItem>
+                    <SelectItem value="custom">{t("services.custom")}</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />

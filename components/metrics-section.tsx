@@ -15,6 +15,7 @@ import { siteConfig } from "@/lib/site"
 
 interface Project {
   id: number
+  category: string
   title: string
   description: string
   image: string
@@ -27,6 +28,7 @@ interface Project {
 export function CourseCard({
   beneficios = [],
   privado = false,
+  category,
   title,
   description,
   image,
@@ -41,28 +43,43 @@ export function CourseCard({
         <button
           type="button"
           onClick={() => track("case_view", { project: title })}
-          className="group overflow-hidden rounded-xl border border-slate-200 bg-white text-left transition-colors duration-150 hover:border-slate-300"
+          className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-lg"
         >
-          <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-50">
+          <div className="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
+            {contain && (
+              <Image
+                src={image}
+                alt=""
+                aria-hidden="true"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="scale-110 object-cover opacity-20 blur-2xl"
+              />
+            )}
             <Image
               src={image}
               alt={`Proyecto ${title}`}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className={`${contain ? "object-contain p-4" : "object-cover"} transition-transform duration-300 group-hover:scale-[1.03]`}
+              className={
+                contain
+                  ? "object-contain p-4 drop-shadow-xl"
+                  : "object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
+              }
             />
           </div>
 
-          <div className="px-4 pb-4 pt-3">
-            <span className="mb-2 inline-block rounded-full bg-blue-50 px-2.5 py-0.5 text-[11px] font-medium text-blue-700">
-              {title}
+          <div className="flex flex-1 flex-col px-4 pb-4 pt-4">
+            <span className="mb-2 inline-block w-fit rounded-full bg-blue-50 px-2.5 py-0.5 text-[11px] font-medium text-blue-700">
+              {category}
             </span>
 
-            <p className="mb-1.5 line-clamp-1 text-sm font-medium leading-snug text-slate-800">
+            <h3 className="mb-1.5 line-clamp-1 text-base font-semibold text-slate-900">{title}</h3>
+            <p className="mb-3 line-clamp-2 min-h-10 text-sm leading-snug text-slate-600">
               {description}
             </p>
 
-            <div className="mt-3 flex items-center justify-between">
+            <div className="mt-auto flex items-end justify-between gap-3">
               <div className="flex flex-wrap gap-1">
                 {beneficios.slice(0, 2).map((beneficio) => (
                   <span
@@ -74,8 +91,8 @@ export function CourseCard({
                 ))}
               </div>
 
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors duration-150 group-hover:border-transparent group-hover:bg-blue-50 group-hover:text-blue-600">
-                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors duration-150 group-hover:border-transparent group-hover:bg-blue-50 group-hover:text-blue-600">
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </div>
             </div>
           </div>
@@ -83,25 +100,37 @@ export function CourseCard({
       </DialogTrigger>
 
       <DialogContent className="max-h-[90vh] max-w-sm overflow-y-auto p-0">
-        <div className="relative aspect-video w-full bg-slate-50">
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
+          {contain && (
+            <Image
+              src={image}
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="384px"
+              className="scale-110 object-cover opacity-20 blur-2xl"
+            />
+          )}
           <Image
             src={image}
             alt={`Proyecto ${title}`}
             fill
             sizes="384px"
-            className={contain ? "object-contain p-4" : "object-cover"}
+            className={contain ? "object-contain p-4 drop-shadow-xl" : "object-cover object-top"}
           />
         </div>
 
         <div className="p-5">
           <span className="mb-3 inline-block rounded-full bg-blue-50 px-2.5 py-0.5 text-[11px] font-medium text-blue-700">
-            {title}
+            {category}
           </span>
 
-          <DialogTitle className="mb-2 text-sm font-semibold leading-snug text-slate-900">
-            {description}
+          <DialogTitle className="mb-2 text-base font-semibold leading-snug text-slate-900">
+            {title}
           </DialogTitle>
-          <DialogDescription className="sr-only">{description}</DialogDescription>
+          <DialogDescription className="mb-4 text-sm leading-relaxed text-slate-600">
+            {description}
+          </DialogDescription>
 
           {beneficios.length > 0 && (
             <div className="mb-5 mt-4">
@@ -153,9 +182,9 @@ export function CardReservada() {
       <DialogTrigger asChild>
         <button
           type="button"
-          className="group relative overflow-hidden rounded-xl border border-dashed border-slate-300 bg-white text-left transition-colors hover:border-blue-300"
+          className="group flex h-full flex-col overflow-hidden rounded-2xl border border-dashed border-slate-300 bg-white text-left transition-colors hover:border-blue-300"
         >
-          <div className="relative flex aspect-[16/10] w-full flex-col items-center justify-center gap-2 overflow-hidden bg-slate-50">
+          <div className="relative flex aspect-[16/9] w-full flex-col items-center justify-center gap-2 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
             <span className="absolute h-16 w-16 rounded-full border-2 border-blue-400 opacity-20 motion-safe:animate-ping" aria-hidden="true" />
             <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-blue-50">
               <Sparkles className="h-7 w-7 text-blue-600" aria-hidden="true" />
@@ -165,16 +194,16 @@ export function CardReservada() {
             </p>
           </div>
 
-          <div className="px-4 pb-5 pt-4">
-            <span className="inline-block rounded-lg bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700">
+          <div className="flex flex-1 flex-col px-4 pb-5 pt-4">
+            <span className="inline-block w-fit rounded-full bg-blue-50 px-2.5 py-0.5 text-[11px] font-medium text-blue-700">
               {t("reservedCard.badge")}
             </span>
-            <p className="pt-3 text-base font-semibold text-slate-700">
+            <p className="pt-3 text-base font-semibold text-slate-800">
               {t.rich("reservedCard.cardTitle", {
                 heart: () => <span className="text-red-400">♥</span>,
               })}
             </p>
-            <p className="pt-1 text-sm text-slate-500">
+            <p className="pt-1 text-sm leading-snug text-slate-500">
               {t.rich("reservedCard.cardInfo", {
                 heart: () => <span className="text-red-400">♥</span>,
               })}
@@ -224,6 +253,7 @@ export function CardReservada() {
 export function MetricsSection() {
   const t = useTranslations("metrics")
   const translatedProjects = t.raw("projects") as Array<{
+    category: string
     title: string
     description: string
     benefits: string[]
@@ -245,6 +275,7 @@ export function MetricsSection() {
 
   const projects = staticProjectsData.map((item, index) => ({
     ...item,
+    category: translatedProjects[index]?.category ?? "",
     title: translatedProjects[index]?.title ?? "",
     description: translatedProjects[index]?.description ?? "",
     beneficios: translatedProjects[index]?.benefits ?? [],
@@ -257,10 +288,17 @@ export function MetricsSection() {
 
       <div className="container relative mx-auto px-4">
         <div className="mx-auto mb-12 max-w-2xl text-center">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 shadow-sm">
+            <div className="h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true" />
+            <span className="text-xs font-medium uppercase tracking-wide text-slate-600">
+              {t("badge")}
+            </span>
+          </div>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             {t("h2_line1")}{" "}
             <span className="mt-2 block text-blue-600">{t("h2_line2")}</span>
           </h2>
+          <p className="mt-4 text-lg leading-relaxed text-slate-600">{t("subtitle")}</p>
         </div>
 
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-2 sm:grid-cols-2 lg:grid-cols-3">

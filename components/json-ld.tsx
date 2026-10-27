@@ -4,8 +4,8 @@ export function JsonLd({ locale }: { locale: string }) {
   const url = siteConfig.url
   const description =
     locale === "es"
-      ? "Desarrollo de software a la medida, aplicaciones web y móviles, y automatización de procesos para empresas en Colombia."
-      : "Custom software development, web and mobile applications, and process automation for companies in Colombia."
+      ? "Software a la medida, páginas web, tiendas online, aplicaciones móviles y sistemas de gestión para pymes en Colombia."
+      : "Custom software, websites, online stores, mobile apps, and management systems for small businesses in Colombia."
 
   const data = {
     "@context": "https://schema.org",

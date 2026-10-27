@@ -4,11 +4,23 @@ import { siteConfig } from "@/lib/site"
 
 export const dynamic = "force-dynamic"
 
-const serviceLabels: Record<string, string> = {
-  mobile: "Aplicaciones móviles",
-  custom: "Soluciones digitales a medida",
-  automation: "Automatización de procesos (RPA)",
-  consulting: "Consultoría y estrategia tech",
+const serviceLabels: Record<"es" | "en", Record<string, string>> = {
+  es: {
+    web: "Página web / tienda online",
+    mobile: "Aplicación móvil",
+    systems: "Sistema de gestión",
+    automation: "Automatización de procesos",
+    consulting: "Consultoría tecnológica",
+    custom: "Otro proyecto a medida",
+  },
+  en: {
+    web: "Website / online store",
+    mobile: "Mobile app",
+    systems: "Management system",
+    automation: "Process automation",
+    consulting: "Technology consulting",
+    custom: "Other custom project",
+  },
 }
 
 const contactSchema = z.object({
@@ -16,7 +28,7 @@ const contactSchema = z.object({
   company: z.string().trim().max(120).optional().default(""),
   email: z.string().trim().email().max(160),
   phone: z.string().trim().max(40).optional().default(""),
-  service: z.enum(["mobile", "custom", "automation", "consulting"]),
+  service: z.enum(["web", "mobile", "systems", "automation", "consulting", "custom"]),
   message: z.string().trim().min(10).max(2000),
   privacy: z.literal(true),
   website: z.string().max(500).optional().default(""),
@@ -121,7 +133,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true })
   }
 
-  const serviceLabel = serviceLabels[data.service] ?? data.service
+  const serviceLabel = serviceLabels[data.locale]?.[data.service] ?? data.service
   const submittedAt = new Date().toLocaleString("es-CO", {
     timeZone: "America/Bogota",
     dateStyle: "medium",

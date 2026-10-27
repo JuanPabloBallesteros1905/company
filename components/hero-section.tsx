@@ -24,6 +24,11 @@ export async function HeroSection() {
         <div className="space-y-12 lg:space-y-16">
           <div className="mx-auto max-w-3xl space-y-8 text-center">
             <header className="space-y-5">
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-700">
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true" />
+                {t("hero.eyebrow")}
+              </div>
+
               <h1 className="mx-auto max-w-4xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl xl:text-6xl">
                 {t("hero.h1_line1")}{" "}
                 <span className="mt-2 block text-blue-600">{t("hero.h1_line2")}</span>
@@ -44,6 +49,19 @@ export async function HeroSection() {
                 {t("hero.cta")}
                 <ArrowRight
                   className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </TrackedLink>
+
+              <TrackedLink
+                href="#proyectos"
+                event="cta_click"
+                data={{ location: "hero_secondary" }}
+                className="group inline-flex items-center rounded-full border border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-700 shadow-sm transition-colors hover:border-slate-300 hover:bg-slate-50"
+              >
+                {t("hero.secondaryCta")}
+                <ArrowRight
+                  className="ml-2 h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-1"
                   aria-hidden="true"
                 />
               </TrackedLink>
@@ -139,7 +157,7 @@ async function BusinessSolutionShowcase() {
                 <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]" />
               </div>
               <div className="space-y-1">
-                <div className="text-3xl font-light text-white">$42,850</div>
+                <div className="text-2xl font-medium text-white">{t("card2.salesLabel")}</div>
                 <div className="mt-2 h-1 overflow-hidden rounded-full bg-white/5">
                   <div className="h-full w-3/4 bg-blue-500" />
                 </div>

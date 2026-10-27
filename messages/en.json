@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "homeTitle": "SolutiaCorp Digital Solutions | IT Solutions & Development",
-    "homeDescription": "We develop mobile apps, automations, and custom systems that guarantee security, efficiency, and a real competitive advantage.",
+    "homeTitle": "SolutiaCorp | Custom Software for Small Businesses",
+    "homeDescription": "We design websites, online stores, apps, and management systems for businesses that want to sell more and work with less effort.",
     "aboutTitle": "About us",
-    "aboutDescription": "Meet SolutiaCorp, a Colombian startup with a Latin American heart driving digital transformation and custom software development in the region."
+    "aboutDescription": "Meet SolutiaCorp, a software development team in Santa Marta helping small businesses and entrepreneurs grow with clear, accessible technology."
   },
   "nav": {
     "inicio": "Home",
@@ -19,15 +19,17 @@
     "switchToEnglish": "Switch to English"
   },
   "hero": {
-    "h1_line1": "Custom software development for businesses",
-    "h1_line2": "to automate and scale your business",
-    "description": "We create web apps, mobile apps, and custom software that automates processes, improves efficiency, and increases your company's sales.",
-    "cta": "Schedule a free call"
+    "eyebrow": "Custom software · Santa Marta, Colombia",
+    "h1_line1": "Custom software to sell more",
+    "h1_line2": "and work with less effort",
+    "description": "We design websites, online stores, apps, and management systems for businesses that want to grow without wrestling with technology.",
+    "cta": "Tell us about your project",
+    "secondaryCta": "View projects"
   },
   "heroShowcase": {
     "card1": {
-      "title": "Web Development & Digital Sales",
-      "badge": "Marketing",
+      "title": "Websites that sell",
+      "badge": "Web",
       "description": "Attract clients, improve your Google ranking, and sell 24/7 with your website.",
       "speed": "Speed",
       "conversion": "Conversion",
@@ -35,18 +37,19 @@
       "ux": "UX"
     },
     "card2": {
-      "title": "Business Management Systems",
+      "title": "Management systems",
       "badge": "Control",
       "description": "Centralize your information and make decisions with real-time data.",
       "dashboard": "Dashboard",
+      "salesLabel": "Monthly sales",
       "cloudSystem": "Cloud System",
       "liveMetrics": "Live Metrics"
     },
     "card3": {
-      "title": "Custom Software & Automation",
-      "badge": "Operations",
+      "title": "Custom software",
+      "badge": "Automation",
       "description": "Automate repetitive tasks, reduce errors, and save hours of work every day.",
-      "efficiency": "+45% Efficiency",
+      "efficiency": "More efficiency",
       "items": [
         "Automatic Invoicing",
         "Inventory Control",
@@ -57,31 +60,36 @@
     }
   },
   "problems": {
-    "h2_line1": "Take your local business to the digital world",
-    "h2_line2": "and start attracting more clients",
-    "description": "If your business has no online presence or still relies on manual processes, you're losing visibility, time, and sales opportunities every day.",
-    "problemHeader": "What's happening",
-    "problems": [
-      "You don't appear on Google",
-      "You waste time on manual processes",
-      "Your systems aren't connected"
+    "h2_line1": "Your business can sell more",
+    "h2_line2": "and work better",
+    "description": "We solve the obstacles that are costing you the most time and sales.",
+    "problemHeader": "The problem",
+    "solutionHeader": "The solution",
+    "pairs": [
+      {
+        "problem": "You don't appear on Google",
+        "solution": "People find you and contact you"
+      },
+      {
+        "problem": "You waste time on manual tasks",
+        "solution": "You automate and recover hours"
+      },
+      {
+        "problem": "Your data is scattered",
+        "solution": "Everything is centralized and under control"
+      }
     ],
-    "solutionHeader": "What you can achieve",
-    "solutions": [
-      "More clients",
-      "More sales",
-      "Less manual work",
-      "Greater visibility"
-    ],
-    "ctaText": "Start competing in the digital world today",
-    "cta": "Schedule a free call"
+    "ctaText": "Tell us what's slowing you down and we'll propose a solution.",
+    "cta": "I want to improve my business"
   },
   "services": {
-    "badge": "Solutions by Business",
+    "badge": "Solutions by business",
     "question": "What kind of business do you have?",
-    "subtitle": "Select your business type and we’ll show you exactly what we can do for you",
-    "solutionsLabel": "What we do for you",
+    "subtitle": "Choose your business and see exactly what we can implement.",
+    "solutionsLabel": "Solutions for your business",
     "ctaCard": "I want this for my business",
+    "showAll": "View all {count} solutions",
+    "showLess": "View less",
     "businesses": [
       {
         "id": "cafeteria",
@@ -176,83 +184,90 @@
     ],
     "ctaPrefix": "Don’t see your business?",
     "cta": "Tell us your idea",
-    "hint": "Select a card to see the solutions for your business"
+    "hint": "Select a card to see the solutions."
   },
   "metrics": {
-    "h2_line1": "Results that back up",
-    "h2_line2": "our experience",
+    "badge": "Projects",
+    "h2_line1": "Real projects",
+    "h2_line2": "real solutions",
+    "subtitle": "Websites, systems, and apps already working for businesses like yours.",
     "projects": [
       {
-        "title": "Joyeria italiana",
-        "description": "Italian jewelry store digitized its catalog to reach more customers nationwide",
+        "category": "Online store",
+        "title": "Joyería Italiana",
+        "description": "Digital catalog and online store to showcase products and sell nationwide.",
         "benefits": [
-          "Greater online visibility",
-          "Nationwide customer increase",
-          "24/7 digital catalog access",
-          "Better product presentation"
+          "Catalog available 24/7",
+          "Online shopping",
+          "Better product presentation",
+          "Greater customer reach"
         ]
       },
       {
-        "title": "This website",
-        "description": "We developed our website in a simple, easy-to-understand way for our clients",
+        "category": "In-house project",
+        "title": "SolutiaCorp",
+        "description": "Our own website, clear and fast, to explain what we do and make contact easy.",
         "benefits": [
-          "Professional company image",
-          "Better client communication",
-          "Clear explanation of services",
-          "Greater brand trust"
+          "Professional image",
+          "Clear message",
+          "Direct contact",
+          "Responsive design"
         ]
       },
       {
+        "category": "Management system",
         "title": "DashGestion",
-        "description": "Manage your sales and inventory in one place",
+        "description": "A system to centralize sales, inventory, and reports in one place.",
         "benefits": [
-          "Centralized inventory control",
-          "Automatic sales recording",
-          "Reduced manual errors",
-          "Reports for decision making"
+          "Centralized control",
+          "Sales tracking",
+          "Fewer manual errors",
+          "Clear reports"
         ]
       },
       {
+        "category": "Inventory system",
         "title": "FerreMag",
-        "description": "Digitized hardware store with an intuitive interface and modern design",
+        "description": "Digital transformation for a hardware store with a catalog, inventory, and a faster shopping experience.",
         "benefits": [
-          "Digital product catalog",
-          "Greater client reach",
-          "Better shopping experience",
-          "Sales process optimization"
+          "Digital catalog",
+          "Inventory control",
+          "Faster shopping",
+          "Better experience"
         ]
       },
       {
+        "category": "Mobile app",
         "title": "Fraktur",
-        "description": "Mobile app connecting doctors with patients securely and efficiently",
+        "description": "A mobile app connecting doctors and patients with secure, accessible information.",
         "benefits": [
-          "Direct doctor-patient connection",
-          "Greater medical service accessibility",
-          "Secure information management",
-          "Faster medical care"
+          "Doctor-patient connection",
+          "Secure access",
+          "Centralized information",
+          "Faster care"
         ]
       }
     ],
     "modal": {
-      "improvements": "Improvements achieved",
+      "improvements": "What we built",
       "private": "This project is private",
       "visit": "Visit project",
       "close": "Close"
     },
     "reservedCard": {
       "badge": "Coming soon",
-      "cardTitle": "Reserved for your project",
+      "cardTitle": "Your project could be next",
       "cardLine": "Your project could be here",
-      "cardInfo": "This space is waiting for your idea. Let's work together to make it real",
-      "modalTitle": "Your project could be here",
-      "modalDescription": "This space is waiting for your idea. We'd love to work with you to make it real. Write to us and let's make it happen!",
+      "cardInfo": "This space is open. Tell us your idea and we'll make it real.",
+      "modalTitle": "Your project could be next",
+      "modalDescription": "This space is open. Tell us what you need and we'll propose how to make it happen.",
       "cta": "Let's talk about your project",
       "close": "Close"
     }
   },
   "contact": {
-    "h2": "Tell us your idea",
-    "description": "First free, no-obligation consultation",
+    "h2": "Tell us what you need",
+    "description": "We reply within 24 business hours. The first consultation is free and with no obligation.",
     "location": "Santa Marta, Colombia",
     "trust": [
       {
@@ -289,10 +304,12 @@
       "phone": "e.g. +57 300 000 0000"
     },
     "services": {
-      "mobile": "Mobile App Development",
-      "custom": "Custom Digital Solutions",
-      "automation": "Process Automation (RPA)",
-      "consulting": "Tech Consulting & Strategy"
+      "web": "Website / online store",
+      "mobile": "Mobile app",
+      "systems": "Management system",
+      "automation": "Process automation",
+      "consulting": "Technology consulting",
+      "custom": "Other custom project"
     },
     "validation": {
       "nameMin": "Name must be at least 2 characters",
@@ -308,7 +325,7 @@
   },
   "footer": {
     "companyName": "SolutiaCorp",
-    "tagline": "Technology solutions for companies seeking efficiency, security, and sustainable growth.",
+    "tagline": "Custom software for small businesses that want to sell more and work better.",
     "empresa": "Company",
     "servicios": "Services",
     "contacto": "Contact",
@@ -322,7 +339,7 @@
         "id": "servicios"
       },
       {
-        "label": "Success Stories",
+        "label": "Projects",
         "id": "proyectos"
       },
       {
@@ -335,12 +352,12 @@
       }
     ],
     "serviceLinks": [
-      "Mobile App Development",
-      "Enterprise Systems",
-      "RPA Automation",
-      "Tech Consulting",
-      "Cloud & DevOps",
-      "Cybersecurity"
+      "Websites",
+      "Online stores",
+      "Management systems",
+      "Mobile apps",
+      "Automation",
+      "Technology consulting"
     ],
     "contactInfo": {
       "email": "jpballesterossosa@gmail.com",
@@ -359,35 +376,35 @@
     "rights": "All rights reserved."
   },
   "about": {
-    "badge": "Our Essence",
-    "h1_line1": "Colombian Startup with a",
-    "h1_line2": "Latin American heart",
-    "description": "At SolutiaCorp, we help small businesses break down the barriers between their physical world and the digital audience. We know that making the leap to the online environment can feel overwhelming, which is why we create clear, accessible software solutions tailored to each entrepreneur's reality. It's not just about technology — it's about opening doors, connecting with new people, and growing what they've worked so hard to build.",
+    "badge": "Who we are",
+    "h1_line1": "Close technology for businesses",
+    "h1_line2": "ready to grow",
+    "description": "At SolutiaCorp we help small businesses and entrepreneurs go digital without the headache. We started in Colombia with a simple idea: create clear, accessible software tailored to each business. We work from Santa Marta for all of Colombia.",
     "cards": [
       {
-        "title": "We connect businesses",
-        "description": "From the physical to the digital world, hassle-free."
+        "title": "Clear solutions",
+        "description": "Software you understand and can use from day one."
       },
       {
-        "title": "Passion for growth",
-        "description": "Seeing businesses flourish drives us."
+        "title": "Results-focused",
+        "description": "We design to sell more, save time, and reduce errors."
       },
       {
-        "title": "Accessible technology",
-        "description": "Clear, simple, and secure software."
+        "title": "Real support",
+        "description": "We explain every step, without the jargon."
       }
     ]
   },
   "projects": {
-    "badge": "Success Stories",
-    "h2_line1": "Projects that deliver",
-    "h2_line2": "measurable results",
-    "description": "Technology solutions implemented at leading companies across various sectors",
+    "badge": "Projects",
+    "h2_line1": "Projects that solve",
+    "h2_line2": "real problems",
+    "description": "Digital solutions for businesses across different industries.",
     "industriesTitle": "Industries served",
-    "cta": "Explore More Success Stories",
+    "cta": "Explore projects",
     "ctaPrompt": "Have a project in mind?",
     "ctaLink": "Let's talk",
-    "viewMore": "View full case"
+    "viewMore": "View project"
   },
   "projectCard": {
     "technologies": "Technologies:"
